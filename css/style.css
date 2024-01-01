@@ -1,0 +1,39 @@
+:root{
+    --black: #353535;
+    --white: #ffffff;
+    --primary-color: #006A91;
+    --font-main: 'Pretendard';
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Pretendard';
+    color: var(--black);
+    font-size: 16px;
+    background: #F3F3F3;
+}
+
+#hero{
+    padding: 200px 0px;
+    background: linear-gradient(#0000009d, #0000009d),url(./../images/hero-banner-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#hero h4{
+    font-family: var(--font-main);
+    font-weight: 400;
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+#hero h1{
+    font-family: var(--font-main);
+    font-weight: 700;
+    font-size: 45px;
+    margin-bottom: 0px;
+}
