@@ -334,13 +334,12 @@ footer{
     margin-bottom: 5px;
 }
 .nav-toggle-btn{
+    padding: 3px;
     display: none;
-    width: 40px;
-    height: 40px;
     border: none;
-    font-size: 20px;
-    background: var(--white);
-    color: var(--primary-color);
+    font-size: 25px;
+    background: transparent;
+    color: var(--white);
     border-radius: 5px;
 }
 /* Responsive Area */
