@@ -1,0 +1,31 @@
+<section id="2fa" class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-2 col-md-2 col-12"></div>
+            <div class="col-lg-8 col-md-8 col-12">
+                <div class="card card-v2">
+                    <div class="card-body">
+                        <div class="form_control_box">
+                            <h2 class="form-title text-center">
+                                {{ lang('2fa.title') }}
+                            </h2>
+                            <p class="mb-3">
+                                {{ lang('2fa.sent') }}
+                            </p>
+
+                            <form {% if site['rtl'] %} class="rtl-form" {% endif %} method="post" action="{{ page['url'] }}">
+                                <div class="form-group">
+                                    <label for="code" class="control-label">{{ lang('2fa.code') }}</label>
+                                    <input type="text" class="form-control" id="code" name="code">
+                                </div>
+                                <input type="hidden" name="_csrf" value="{{csrftoken}}">
+                                <button type="submit" class="btn btn-primary v2 w-100">{{ lang('2fa.continue') }}</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-2 col-12"></div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,183 @@
+<style>
+    .btn-close {
+        box-sizing: content-box;
+        width: 1em;
+        height: 1em;
+        padding: .25em .25em;
+        color: #000;
+        background: transparent url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z'/%3e%3c/svg%3e") center/1em auto no-repeat;
+        border: 0;
+        border-radius: .375rem;
+        opacity: .5
+    }
+    
+    .btn-close:hover {
+        color: #000;
+        text-decoration: none;
+        opacity: .75
+    }
+    
+    .btn-close.disabled,.btn-close:disabled {
+        pointer-events: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+        opacity: .25
+    }
+    
+    .btn-close-white {
+        filter: invert(1) grayscale(100%) brightness(200%)
+    }
+    </style>
+    
+ <div class="py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+        <div class="">
+          <div class="card card-v2">
+            <div class="card-body">
+              <h2 class="form-title text-center mb-2">
+                <i class="navbar-icon far fa-credit-card"></i> 잔액 충전
+            </h2>
+            <br> <br>
+              <form name="form">
+                <input type="hidden" name="username" value="{{user['username']}}">
+                <input type="hidden" name="amount" value="0">
+                
+                <label class="form-label" style="color:#333;">충전금액</label>
+                <p class="card-text" id="amount"style="color: #73778b;padding-bottom:10px;padding-top:10px;border-bottom: 1px solid #ff9800;">충전 금액을 선택해주세요.</p>
+                <button type="button" class="btn-close" style="transform: translateY(-180%);float:right;" onclick="AmountReset();">
+                </button>
+                
+                <button type="button" class="btn btn-light" onclick="AmountAdd(5500);"style="border: 1px solid #ddd;">+ 5천원</button>
+                <button type="button" class="btn btn-light" onclick="AmountAdd(11000);"style="border: 1px solid #ddd;">+ 1만원</button>
+                <button type="button" class="btn btn-light" onclick="AmountAdd(55000);"style="border: 1px solid #ddd;">+ 5만원</button>
+                <button type="button" class="btn btn-light" onclick="AmountAdd(110000);"style="border: 1px solid #ddd;">+ 10만원</button>
+                <button type="button" class="btn btn-light" onclick="AmountAdd(550000);"style="border: 1px solid #ddd;">+ 50만원</button>
+                <button type="button" class="btn btn-light" onclick="AmountAdd(1100000);"style="border: 1px solid #ddd;">+ 100만원</button>
+  
+                <div class="form-group">
+                  <label class="form-label" style="color:#333;padding-top:10px;">입금자명</label>
+                  <input type="text" class="form-control" name="name" placeholder="입금자명을 입력해주세요.">
+                </div>
+                
+                <button type="submit" class="btn btn-primary v2 w-100" onclick="PayPopUp();">충전하기</button>
+                
+              </form>
+              {{ addfunds }}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2"></div>
+    </div>
+  
+  </div>
+ </div>
+    
+    <script>
+    function AmountAdd(amount){
+        var total_amount = amount + Number($('input[name=amount]').val());
+        var vat_amount = (total_amount/1.1)*0.1;
+    
+        var amount_message = total_amount.toLocaleString('ko-KR')+"원 (부가세 : "+ 				vat_amount.toLocaleString('ko-KR') +"원)"
+        $('input[name=amount]').val(total_amount);
+        $("#amount").text(amount_message);
+    
+     }
+    
+    function AmountReset(){
+        $('input[name=amount]').val(0);
+        $("#amount").text("충전 금액을 선택해주세요.");
+     }
+    function PayPopUp() {
+          window.open("", "payment", "toolbar=no,directories=no,scrollbars=no,resizable=no,status=no,menubar=no,width=470, height=600, top=100,left=100" );
+    
+          form.target="payment";
+          form.action="https://lasstudio.gabia.io/orders/payment";
+          form.method = "post";
+    
+          form.submit( );
+        }
+    </script>
+    
+    {% if paymentList %}
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-md-offset-2">
+            <div class="well">
+              <table class="table">
+                <thead>
+                <tr>
+                  <th>{{ lang('addfunds.id') }}</th>
+                  <th>{{ lang('addfunds.date') }}</th>
+                  <th>{{ lang('addfunds.method') }}</th>
+                  <th>{{ lang('addfunds.amount') }}</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for payment in paymentList %}
+                  <tr>
+                    <td>{{ payment['id'] }}</td>
+                    <td><span class="nowrap">{{ payment['date'] }}</span></td>
+                    <td>{{ payment['method'] }}</td>
+                    <td>
+                      {% if payment['original_amount'] %}
+                        <span data-toggle="tooltip" data-placement="left" title="{{ payment['original_amount'] }}&nbsp;{{ payment['original_currency'] }}">≈ {{ payment['amount'] }}</span>
+                      {% else %}
+                        {{ payment['amount'] }}
+                      {% endif %}
+                    </td>
+                  </tr>
+                {% endfor %}
+                </tbody>
+              </table>
+            </div>
+            {% if pagination['count'] > 50 %}
+              <div class="nav-pills">
+                <ul class="pagination {% if site['rtl'] %} rtl-pagination {% endif %}">
+                  {% if pagination['current'] != 1 %}
+                    <li>
+                      <a href="{{ page['url'] }}/{{ pagination['last'] }}" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                      </a>
+                    </li>
+                  {% endif %}
+    
+                  {% set r, l = 3, 3 %}
+    
+                  {% if pagination['current'] == 1 %}
+                    {% set r = 6 %}
+                  {% endif %}
+    
+                  {% if pagination['current'] == 2 %}
+                    {% set r = 5 %}
+                  {% endif %}
+    
+                  {% if pagination['current'] >= pagination['pages'] %}
+                    {% set l = 5 %}
+                  {% endif %}
+    
+                  {% for i in 1..ceil(pagination['pages']) %}
+                    {% if i >= (pagination['current']-l) and i <= (pagination['current']+r) %}
+                      <li{% if i == pagination['current'] %} class="active"{% endif %}><a href="{{ page['url'] }}/{{i}}">{{i}}</a></li>
+                    {% endif %}
+                  {% endfor %}
+    
+                  {% if pagination['current'] < pagination['pages'] %}
+                    <li>
+                      <a href="{{ page['url'] }}/{{ pagination['next'] }}" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                      </a>
+                    </li>
+                  {% endif %}
+                </ul>
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    {% endif %}
+    </div>

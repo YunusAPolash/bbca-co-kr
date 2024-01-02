@@ -1,0 +1,679 @@
+{% if error%}
+<section class="signin" id="box_log_up">
+    <div class="container">
+       <div class="row">
+            <div class="col-md-2">
+            </div>
+            <div class="col-md-8">
+                <div class="card card-v2">
+                    <div class="card-body">
+                        <div class="form_control_box">
+                            <h2 class="form-title text-center mb-2">
+                                로그인
+                            </h2>
+                            <form {% if site['rtl'] %}class="rtl-form"{% endif %} method="post" action="{{ page['url'] }}">
+                                {% if error %}
+                                    <div class="alert alert-dismissible alert-danger fade show">
+                                        {{ errorMessage }}
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                    </div>
+                                {% endif %}
+                            
+                                {% if success %}
+                                    <div class="alert alert-success  alert-dismissible fade show" role="alert">
+                                        {{successMessage}}
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                    </div>
+                                {% endif %}
+                            
+                                <div class="form-group">
+                                    <label for="username" class="control-label">{{ lang('signup.username') }}</label>
+                                    <input type="text" class="form-control" id="username" name="LoginForm[username]">
+                                </div>
+                                <div class="form-group form-group__password">
+                                    <label for="password" class="control-label">{{lang('signup.password')}}</label>
+                                    <input type="password" class="form-control" id="password" name="LoginForm[password]">
+                                    
+                                </div>
+                                <div class="mb-3 checkbox">
+                                    <label>
+                                        <input type="checkbox"  name="LoginForm[remember]" value="1" id="remember">{{lang('signin.remember_me')}}
+                                    </label>
+                                </div>
+                            
+                              <div class="text-center">
+                                {% if captcha %}
+                                    {{ captchaCode }}
+                                {% endif %}
+                              </div>
+                            
+                                <input type="hidden" name="_csrf" value="{{csrftoken}}">
+                                <button type="submit" class="btn btn-primary v2 w-100" id="signinBtn">{{ lang('signin.button') }}</button>
+                            
+                                <div class="mt-3 text-center">
+                                    {% if registration %}
+                                    <span class="pull-right pull-right-middle">{{ lang('signin.text') }} <a href="{{ page_url('signup') }}">{{ lang('signup.title') }}</a></span> <br>
+                                {% endif %}
+                                {% if site['resetPassword'] %}
+                                        <a href="{{ page_url('resetpassword') }}" class="forgot-password">{{ lang('signin.reset_password') }}</a>
+                                    {% endif %}
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2"></div>
+       </div>
+    </div>
+  </section>
+{% else %}
+
+<section class="content">
+    <section class="allContent index">
+        <section id="main_banner">
+            <div class="container">
+            <div class="row d-flex align-items-center">
+                <div class="col-lg-6 col-md-6 col-12">
+                <div class="banner_conent">
+                    <h1 data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                    SNS마케팅의 시작부터 성장까지
+                    The<span class="text-col-primary">star</span>gram 앞선 기술과 경험을 제공합니다!
+                    </h1>
+                    <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+                    Thestargram 대한민국 최고의 소셜 미디어 마케팅 계정을 등록하고 소셜 네트워크 계정의 성장을 시작하십시오.
+                    </p>
+                    <div class="button_wrap">
+                    <a href="javascript:void(0)" onclick="handleDemoClick()" class="btn btn_home" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">비회원 둘러보기</a>
+                    <a href="javascript:void(0)" onclick="showLogin()" class="btn btn_home_outline" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="800">로그인</a>
+                    </div>
+                </div>
+                </div>
+                <div class="col-lg-6 col-md-6  col-12">
+                    <!-- Hiding For Phone Version -->
+                    <div class="banner_image">
+                    <img src="https://cdn.mypanel.link/efguir/b7ft45xao7h3zupe.png" alt="" class="img-fluid img_min_banner" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1200">
+                    <img src="https://cdn.mypanel.link/efguir/y3fi0i6rlmpk536j.png" class="img-fluid img_banner img-1" alt="" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1000">
+                    <img src="https://cdn.mypanel.link/efguir/83ljpijhd7nj6lck.png" class="img-fluid img_banner img-2" alt="" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1400">
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+        <section id="counter">
+        <div class="container">
+            <div class="row">
+            <div class="col-md-3 col-lg-3 col-6">
+                <div class="text-center counter_item"  data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                <h3>1,00,000+</h3>
+                <p>누적 주문건 수</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-lg-3 col-6">
+                <div class="text-center counter_item"  data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+                <h3>9,724</h3>
+                <p>현재 진행중인 주문</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-lg-3 col-6">
+                <div class="text-center counter_item mr-mb-0"  data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">
+                <h3>4,512</h3>
+                <p>누적 주문건 수</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-lg-3 col-6">
+                <div class="text-center counter_item mr-mb-0"  data-aos="fade-up" data-aos-duration="1000" data-aos-delay="700">
+                <h3>39,000+</h3>
+                <p>회원 수</p>
+                </div>
+            </div>
+            </div>
+        </div>
+        </section>
+        <section id="services">
+            <div class="container">
+                <div class="row">
+                <div class="col-lg-12 col-md-12 co-12">
+                    <h2 class="text-center sec_title"  data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">Services</h2>
+                </div>
+                </div>
+                <div id="services_ph"  data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12">
+                            <div class="servicesSlider">
+                                <div>
+                                    <div class="services_item" >
+                                        <div class="icon">
+                                            <img src="https://res.cloudinary.com/dsnmt7vn1/image/upload/v1672404651/main_2_1_kt8kuc.svg" alt="" class="img-fluid">
+                                        </div>
+                                        <div class="content">
+                                            <h3>Facebook</h3>
+                                            <p>
+                                            좋아요, 팔로워, 계정 <br>
+                                            24시간 자동 관리
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <div class="services_item">
+                                        <div class="icon" >
+                                            <img src="https://res.cloudinary.com/dsnmt7vn1/image/upload/v1672404652/main_2_2_ogxrxg.svg" alt="" class="img-fluid">
+                                        </div>
+                                        <div class="content">
+                                            <h3>Instagram</h3>
+                                            <p>
+                                            좋아요, 팔로워, 댓글 <br>
+                                            24시간 자동 관리
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <div class="services_item">
+                                        <div class="icon">
+                                            <img src="https://res.cloudinary.com/dsnmt7vn1/image/upload/v1672404651/main_2_3_ujkrvo.svg" alt="" class="img-fluid">
+                                        </div>
+                                        <div class="content">
+                                            <h3>YouTube</h3>
+                                            <p>
+                                            구독자, 조회수, 좋아요 <br>
+                                            24시간 자동 관리
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <div class="services_item">
+                                        <div class="icon">
+                                            <img src="https://res.cloudinary.com/dsnmt7vn1/image/upload/v1672404651/main_2_4_tfj4kd.svg" alt="" class="img-fluid">
+                                        </div>
+                                        <div class="content">
+                                            <h3>Etc</h3>
+                                            <p>
+                                            좋아요, 팔로워, 조회수 <br>
+                                            24시간 자동 관리
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="services_pc">
+                     <div class="row">
+                        <div class="col-lg-3 col-md-3 col-6">
+                            <div class="services_item"  data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                                <div class="icon">
+                                    <img src="https://res.cloudinary.com/dsnmt7vn1/image/upload/v1672404651/main_2_1_kt8kuc.svg" alt="" class="img-fluid">
+                                </div>
+                                <div class="content">
+                                    <h3>Facebook</h3>
+                                    <p>
+                                    좋아요, 팔로워, 계정 <br>
+                                    24시간 자동 관리
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-6">
+                            <div class="services_item"  data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+                                <div class="icon" >
+                                    <img src="https://res.cloudinary.com/dsnmt7vn1/image/upload/v1672404652/main_2_2_ogxrxg.svg" alt="" class="img-fluid">
+                                </div>
+                                <div class="content">
+                                    <h3>Instagram</h3>
+                                    <p>
+                                    좋아요, 팔로워, 댓글 <br>
+                                    24시간 자동 관리
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-6">
+                            <div class="services_item"  data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">
+                                <div class="icon">
+                                    <img src="https://res.cloudinary.com/dsnmt7vn1/image/upload/v1672404651/main_2_3_ujkrvo.svg" alt="" class="img-fluid">
+                                </div>
+                                <div class="content">
+                                    <h3>YouTube</h3>
+                                    <p>
+                                    구독자, 조회수, 좋아요 <br>
+                                    24시간 자동 관리
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-6">
+                            <div class="services_item"  data-aos="fade-up" data-aos-duration="1000" data-aos-delay="800">
+                                <div class="icon">
+                                    <img src="https://res.cloudinary.com/dsnmt7vn1/image/upload/v1672404651/main_2_4_tfj4kd.svg" alt="" class="img-fluid">
+                                </div>
+                                <div class="content">
+                                    <h3>Etc</h3>
+                                    <p>
+                                    좋아요, 팔로워, 조회수 <br>
+                                    24시간 자동 관리
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="default_section">
+        <div class="container">
+            <div class="row d-flex align-items-center">
+            <div class="col-lg-6 col-md-6 co-12">
+                <div class="default_section_content">
+                <h3  data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                    The<span class="text-col-primary">star</span>gram <br>
+                    SNS 마케팅의 <br>
+                    정점에 서있습니다.
+                </h3>
+                <p  data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                    수천만명이 이용하는 SNS! <br>
+                    SNS마케팅은 선택이 아닌 필수! <br>
+                    정점에 있는  The<span class="text-col-primary">star</span>gram   도와드립니다.
+                </p>
+                <div class="button_wrap">
+                    <a href="javascript:void(0)" onclick="handleDemoClick()" class="btn btn_home"  data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">비회원 둘러보기</a>
+                    <a href="javascript:void(0)" onclick="showLogin()" class="btn btn_home_outline"  data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">로그인</a>
+                </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-12">
+                <div class="default_sectioin_img"  data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">
+                     <img src="https://cdn.mypanel.link/efguir/fbmdmwxecrlnguhq.png" class="img-fluid" alt="">
+                </div>
+            </div>
+            </div>
+        </div>
+        </section>
+        <section id="our_features">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+                        <h2 class="text-center sec_title"  data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">프리미엄을 만든 작은 차이!</h2>
+                    </div>
+                </div>
+                <div id="features_ph"  data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12">
+                            <div class="features_slider" >
+                                <div>
+                                    <div class="fe_item_wrap" >
+                                        <div class="icon">
+                                            <img src="https://cdn.mypanel.link/efguir/8wei5zybcsx6shsn.png" class="img-fluid" alt="">
+                                        </div>
+                                        <h3>주문 즉시 가동</h3>
+                                        <p>
+                                            모든 주문은 주문 즉시 자동으로 가동됩니다. <br>
+                                            물론 24시간 가능합니다.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="fe_item_wrap">
+                                        <div class="icon">
+                                            <img src="https://cdn.mypanel.link/efguir/sb0kuu41zdiafodn.png" class="img-fluid" alt="">
+                                        </div>
+                                        <h3>업계 최저가</h3>
+                                        <p>
+                                            자체 개발 서비스를 통해 서비스 품질을 희생하지 않고 업계 최저가로 제공합니다.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="fe_item_wrap">
+                                        <div class="icon">
+                                            <img src="https://cdn.mypanel.link/efguir/c2xyop38h75he95m.png" class="img-fluid" alt="">
+                                        </div>
+                                        <h3>프리미엄 서비스</h3>
+                                        <p>
+                                            실제 활동하는  <br>
+                                            한국인 서비스가 <br>
+                                            SNS채널에 제공됩니다.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="fe_item_wrap">
+                                        <div class="icon">
+                                            <img src="https://cdn.mypanel.link/efguir/y418mnl9ifhfgi3r.png" class="img-fluid" alt="">
+                                        </div>
+                                        <h3>업계 최고의 보안</h3>
+                                        <p>
+                                            최고의 암호화 보안서버로 회원님의 소중한 정보를 안전하게 보호해드립니다.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="fe_item_wrap">
+                                        <div class="icon">
+                                            <img src="https://cdn.mypanel.link/efguir/d15c8ey7gn1ysa7o.png" class="img-fluid" alt="">
+                                        </div>
+                                        <h3>기술지원</h3>
+                                        <p>
+                                            광고대행사, 프리랜서 등을 위한 페이지 개발 및 분양 가능. API제공을 통한 재판매 가능!
+                                        </p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="fe_item_wrap">
+                                        <div class="icon">
+                                            <img src="https://cdn.mypanel.link/efguir/ylsgdummwbabh1m2.png" class="img-fluid" alt="">
+                                        </div>
+                                        <h3>연중무휴 고객 지원</h3>
+                                        <p>
+                                            각 분야별 전문 상담 인력을 통해 서비스를 원활하게 이용하실 수 있도록 돕습니다.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+              <div id="features_pc">
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-12">
+                        <div class="fe_item_wrap"  data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                            <div class="icon">
+                                <img src="https://cdn.mypanel.link/efguir/8wei5zybcsx6shsn.png" class="img-fluid" alt="">
+                            </div>
+                            <h3>주문 즉시 가동</h3>
+                            <p>
+                                모든 주문은 주문 즉시 자동으로 가동됩니다. <br>
+                                물론 24시간 가능합니다.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-12">
+                        <div class="fe_item_wrap" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+                            <div class="icon">
+                                <img src="https://cdn.mypanel.link/efguir/sb0kuu41zdiafodn.png" class="img-fluid" alt="">
+                            </div>
+                            <h3>업계 최저가</h3>
+                            <p>
+                                자체 개발 서비스를 통해 서비스 품질을 희생하지 않고 업계 최저가로 제공합니다.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-12">
+                        <div class="fe_item_wrap" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">
+                            <div class="icon">
+                                <img src="https://cdn.mypanel.link/efguir/c2xyop38h75he95m.png" class="img-fluid" alt="">
+                            </div>
+                            <h3>프리미엄 서비스</h3>
+                            <p>
+                                실제 활동하는  <br>
+                                한국인 서비스가 <br>
+                                SNS채널에 제공됩니다.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-12">
+                        <div class="fe_item_wrap" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="800">
+                            <div class="icon">
+                                <img src="https://cdn.mypanel.link/efguir/y418mnl9ifhfgi3r.png" class="img-fluid" alt="">
+                            </div>
+                            <h3>업계 최고의 보안</h3>
+                            <p>
+                                최고의 암호화 보안서버로 회원님의 소중한 정보를 안전하게 보호해드립니다.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-12">
+                        <div class="fe_item_wrap" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1000">
+                            <div class="icon">
+                                <img src="https://cdn.mypanel.link/efguir/d15c8ey7gn1ysa7o.png" class="img-fluid" alt="">
+                            </div>
+                            <h3>기술지원</h3>
+                            <p>
+                                광고대행사, 프리랜서 등을 위한 페이지 개발 및 분양 가능. API제공을 통한 재판매 가능!
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-12">
+                        <div class="fe_item_wrap"  data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1200">
+                            <div class="icon">
+                                <img src="https://cdn.mypanel.link/efguir/ylsgdummwbabh1m2.png" class="img-fluid" alt="">
+                            </div>
+                            <h3>연중무휴 고객 지원</h3>
+                            <p>
+                                각 분야별 전문 상담 인력을 통해 서비스를 원활하게 이용하실 수 있도록 돕습니다.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+              </div>
+
+            </div>
+        </section>
+        <section id="testimonials">
+            <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-12">
+                <h2 class="text-center sec_title"  data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">실제 SNS몽 회원님들의 생생한 후기</h2>
+                </div>
+            </div>
+            <div class="row mb-5">
+                <div class="col-lg-12 col-md-12 col-12">
+                <div class="testimonials_wraper"  data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+                    <div>
+                    <div class="testimonials_item">
+                        <div class="comma">,,</div>
+                        <div class="text">
+                        아무것도 모르는 제가 마케팅 고수가 될 수 있도록 하나부터 열까지 친절하게 상담해주셔서 고맙습니다. Thestargram 이제는 많이 웃고 지냅니다.
+                        </div>
+                        <div class="testimonials_user">
+                        <div class="avatar">
+                            <img src="https://cdn.mypanel.link/efguir/3556z77d48hyglhh.png" alt="">
+                        </div>
+                        <div class="user_av">
+                            <h5>hwang*** 님</h5>
+                            <div class="star_ss">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+    
+                    <div>
+                    <div class="testimonials_item">
+                    <div class="comma">,,</div>
+                    <div class="text">
+                        아무것도 모르는 제가 마케팅 고수가 될 수 있도록 하나부터 열까지 친절하게 상담해주셔서 고맙습니다. Thestargram 이제는 많이 웃고 지냅니다.
+                    </div>
+                    <div class="testimonials_user">
+                        <div class="avatar">
+                        <img src="https://cdn.mypanel.link/efguir/pr2l35gl0n63fysk.png" alt="">
+                        </div>
+                        <div class="user_av">
+                        <h5>hwang*** 님</h5>
+                        <div class="star_ss">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                    </div>
+    
+    
+                    <div>
+                    <div class="testimonials_item">
+                    <div class="comma">,,</div>
+                    <div class="text">
+                        아무것도 모르는 제가 마케팅 고수가 될 수 있도록 하나부터 열까지 친절하게 상담해주셔서 고맙습니다. Thestargram 이제는 많이 웃고 지냅니다.
+                    </div>
+                    <div class="testimonials_user">
+                        <div class="avatar">
+                        <img src="https://cdn.mypanel.link/efguir/tidtttp6t8i92r84.png" alt="">
+                        </div>
+                        <div class="user_av">
+                        <h5>hwang*** 님</h5>
+                        <div class="star_ss">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                    </div>
+    
+    
+                    <div>
+                    <div class="testimonials_item">
+                    <div class="comma">,,</div>
+                    <div class="text">
+                        아무것도 모르는 제가 마케팅 고수가 될 수 있도록 하나부터 열까지 친절하게 상담해주셔서 고맙습니다. Thestargram 이제는 많이 웃고 지냅니다.
+                    </div>
+                    <div class="testimonials_user">
+                        <div class="avatar">
+                        <img src="https://cdn.mypanel.link/efguir/39nbttsr3s2j20ss.png" alt="">
+                        </div>
+                        <div class="user_av">
+                        <h5>hwang*** 님</h5>
+                        <div class="star_ss">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                    </div>
+    
+    
+                    <div>
+                    <div class="testimonials_item">
+                    <div class="comma">,,</div>
+                    <div class="text">
+                        아무것도 모르는 제가 마케팅 고수가 될 수 있도록 하나부터 열까지 친절하게 상담해주셔서 고맙습니다. Thestargram 이제는 많이 웃고 지냅니다.
+                    </div>
+                    <div class="testimonials_user">
+                        <div class="avatar">
+                        <img src="https://cdn.mypanel.link/efguir/nqmykboz3rfdi776.png" alt="">
+                        </div>
+                        <div class="user_av">
+                        <h5>hwang*** 님</h5>
+                        <div class="star_ss">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 co-md-12 col-12">
+                <div class="asking_wrap text-center">
+                    <img src="https://cdn.mypanel.link/efguir/7kt40bqwyo457pnm.png" class="bot_img bot_img-1" alt="">
+                    <h2 class="text-center sec_title mb-3"  data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">새로운 마케팅 경험, 지금 시작해보세요!</h2>
+                    <div class="button_wrap">
+                    <a href="" class="btn btn_home"  data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">지원을 받다</a>
+                    </div>
+                    <img src="https://cdn.mypanel.link/efguir/ifkke5g6mknqqwgz.png" class="bot_img bot_img-2" alt="">
+                </div>
+                </div>
+            </div>
+            </div>
+        </section>
+    </section>
+    <section class="signin" id="box_log_up">
+        <div class="container">
+           <div class="row">
+                <div class="col-md-2">
+                </div>
+                <div class="col-md-8">
+                    <div class="card card-v2">
+                        <div class="card-body">
+                            <div class="form_control_box">
+                                <h2 class="form-title text-center mb-2">
+                                    로그인
+                                </h2>
+                                <form {% if site['rtl'] %}class="rtl-form"{% endif %} method="post" action="{{ page['url'] }}">
+                                    {% if error %}
+                                        <div class="alert alert-dismissible alert-danger fade show">
+                                            {{ errorMessage }}
+                                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                        </div>
+                                    {% endif %}
+                                
+                                    {% if success %}
+                                        <div class="alert alert-success  alert-dismissible fade show" role="alert">
+                                            {{successMessage}}
+                                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                        </div>
+                                    {% endif %}
+                                
+                                    <div class="form-group">
+                                        <label for="username" class="control-label">{{ lang('signup.username') }}</label>
+                                        <input type="text" class="form-control" id="username" name="LoginForm[username]">
+                                    </div>
+                                    <div class="form-group form-group__password">
+                                        <label for="password" class="control-label">{{lang('signup.password')}}</label>
+                                        <input type="password" class="form-control" id="password" name="LoginForm[password]">
+                                        
+                                    </div>
+                                    <div class="mb-3 checkbox">
+                                        <label>
+                                            <input type="checkbox"  name="LoginForm[remember]" value="1" id="remember">{{lang('signin.remember_me')}}
+                                        </label>
+                                    </div>
+                                
+                                  <div class="text-center">
+                                    {% if captcha %}
+                                        {{ captchaCode }}
+                                    {% endif %}
+                                  </div>
+                                
+                                    <input type="hidden" name="_csrf" value="{{csrftoken}}">
+                                    <button type="submit" class="btn btn-primary v2 w-100" id="signinBtn">{{ lang('signin.button') }}</button>
+                                
+                                    <div class="mt-3 text-center">
+                                        {% if registration %}
+                                        <span class="pull-right pull-right-middle">{{ lang('signin.text') }} <a href="{{ page_url('signup') }}">{{ lang('signup.title') }}</a></span> <br>
+                                    {% endif %}
+                                    {% if site['resetPassword'] %}
+                                            <a href="{{ page_url('resetpassword') }}" class="forgot-password">{{ lang('signin.reset_password') }}</a>
+                                        {% endif %}
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2"></div>
+           </div>
+        </div>
+      </section>
+</section>
+{% endif %}

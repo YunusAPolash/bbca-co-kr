@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="{{site['language']}}">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page['title'] }}</title>
+  <meta name="keywords" content="{{ site['seo_key'] }}">
+  <meta name="description" content="{{ site['seo_desc'] }}">
+  {% if site['favicon'] %}
+    <link rel="shortcut icon" type="image/ico" href="{{ site['favicon'] }}" />
+  {% endif %}
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet"> 
+   <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  
+ 
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://snssignal.com/">
+<meta property="og:title" content="SNS SIGNAL - 자동화된 마케팅 도구">
+<meta property="og:description" content="SNS SIGNAL은 올인원 자동화된 소셜 미디어 서비스 제공업체입니다. 틱톡 조회수, 틱톡 좋아요, 인스타그램 좋아요, 인스타그램 팔로워, 유튜브 동영상 조회수, w를 구매할 수 있습니다.">
+<meta property="og:image" content="https://cdn.mypanel.link/e2mfjj/ugsiwiaxej0zkjlt.png">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://snssignal.com/">
+<meta property="twitter:title" content="SNS SIGNAL - 자동화된 마케팅 도구">
+<meta property="twitter:description" content="SNS SIGNAL은 올인원 자동화된 소셜 미디어 서비스 제공업체입니다. 틱톡 조회수, 틱톡 좋아요, 인스타그램 좋아요, 인스타그램 팔로워, 유튜브 동영상 조회수, w를 구매할 수 있습니다.">
+<meta property="twitter:image" content="https://cdn.mypanel.link/e2mfjj/ugsiwiaxej0zkjlt.png">
+
+  
+  {{ site['custom_header'] }}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css" />
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+  
+  {% for style in site['styles'] %}
+    <link rel="stylesheet" type="text/css" href="{{ style['href'] }}">
+  {% endfor %}
+  {% if user['auth']%}
+  	<style>
+  		.navbar-brand img {max-height:68px;}
+  	</style>
+  {% else %}
+  <style>
+  		.navbar-brand img {max-height:55px;}
+  	</style>
+  {% endif %}
+</head>
+<body {% if user['auth'] %} class="auth daymode" {% else %} class="not-auth" style="position: relative; min-height: 100%; top: 0px;"{% endif %}>
+{% if user['auth'] %}
+  <div id="wrapper" class="toggled">
+<nav class="navbar navbar-default navbar-static-top">
+    	<div class="container-fluid">
+          <div class="navbar-header">
+            <a type="button" onclick="abc()" class="nav-btn"><i class="fas fa-bars"></i></a>
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <div class="show-in-mob">
+            	<div class="sideBarLogo">
+                  <a class="navbar-brand" href="/">
+                    <img class="full-logo" src="{{ site['logo'] }}" alt="{{site['name']}}" title="">
+                    <img class="red-logo" src="https://cdn.mypanel.link/8mz2qh/6ne3di0zo7qhfkdg.png" alt="{{site['name']}}" title="{{site['name']}}">
+                                      </a>
+              </div>
+              
+              <div class="sidebar-pinner">
+                <a id="menu-toggle" class="btn btn-secondary" href="#menu-toggle">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </a>
+              </div>
+            </div>
+            <ol class="breadcrumb mob-show">
+              <li><a href="#"><img src="//i.imgur.com/LEK30W1.png" alt="Bread Icon"> HOME</a></li>
+              <li class="pageName"><div>{{page['title']	}}</div></li>
+            </ol>
+            <span class="pull-right mob-show"><a href="/addfunds"><span class="badge blnceBadge">$0.01<span>+</span></span></a></span>
+          </div>
+          <div id="navbar" class="collapse navbar-collapse">
+            <ol class="breadcrumb">
+              <li><a href="#"><img src="//i.imgur.com/LEK30W1.png" alt="Bread Icon"> HOME</a></li>
+              <li>{{page['title']}}</li>
+             
+            </ol>
+            <ul class="nav navbar-nav navbar-right navbar-right-block">
+              <li>
+                <a href="/addfunds"><span class="badge blnceBadge blnceBadge-desktop">{{user['balance']	}}<span>+</span></span></a>
+              </li>
+              <li>
+                <a href="/tickets"><span class="drop-icon"><i class="fas fa-comments"></i><span class="ticket-count"></span></span></a>
+              </li>
+              
+              <li><a href="/account"><span class="drop-icon"><i class="fas fa-cog"></i></span></a></li>
+              
+             
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="drop-icon"><i class="fas fa-user-alt"></i></span><span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="/account">계정</a></li>                 
+                  <li role="separator" class="divider"></li>
+                  <li><a href="/logout">로그 아웃</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+    	</div>
+    </nav>
+    
+      <nav class="navbar navbar-inverse">
+    	<div class="navbar-collapse navbar-ex1-collapse">
+    		<div id="sidebar-wrapper" class="sidebar-toggle">
+    			<div class="side-back">
+                  <ul class="sideBarUtilities">
+                  	<li>
+                  		<a id="menu-toggle2" class="btn btn-secondary" href="#menu-toggle">
+                            <i class="fa fa-times"></i>
+                        </a>
+                  	</li>
+                    <li>
+                    	<a href="/account">
+                    		<i class="fa fa-user"></i>
+                    	</a>
+                    </li>
+                   
+                    <li>
+                      	<a href="/affiliates">
+                      		<i class="fa fa-share-alt"></i>
+                      	</a>
+                    </li>
+                    <li>
+                      	<a href="/tickets">
+                      		<i class="fas fa-ticket-alt"></i>
+                      	</a>
+                    </li>
+                    <li>
+                    	<a href="#">
+                    		<i class="fa fa-lightbulb"></i>
+                    	</a>
+                    </li>
+                    
+                  </ul>
+    				<div class="sideBarLogo">
+                      <a class="navbar-brand" href="/">
+               <img class="full-logo" src="{{ site['logo'] }}" alt="{{site['name']}}" title="">
+                          <img class="red-logo" src="https://cdn.mypanel.link/8mz2qh/6ne3di0zo7qhfkdg.png" alt="{{site['name']}}" title="{{site['name']}}">
+                                              </a>
+    				</div>                  	
+                  	<div class="profileBox">
+                  	  <div class="profilePic"><img src="https://i.postimg.cc/L6GCK21j/profile-Pic.png" alt="profile pic"></div>
+                      <h4>{{user['username']}}</h4>
+                      <p><img src="//i.imgur.com/65AKxWJ.png" alt="online icon"> <span>Online</span></p>
+                  	</div>
+                  	<span class="mob-show">
+                        <a href="/addfunds">
+                          <span class="badge blnceBadge">{{user['balance']}}<span>+</span></span>
+                        </a>
+                    </span>
+                  	<ul class="sidebar-nav">
+                      <li class="showOnMobile">
+                        <a href="/account" data-toggle="tooltip" data-placement="right" title="" data-original-title="Account"><i class="fa fa-user"></i><span class="menu-title">Account</span></a>
+                      </li>
+                      {% for menu in site['menu'] %}
+                            {% if menu['link'] == '/' %}
+                  	    <li {% if menu['active'] %} class="active" {% endif %} data-toggle="tooltip" data-placement="right" title="{{ menu['name'] }}" data-original-title="{{ menu['name'] }}">
+                      		<a href="{{ menu['link'] }}"><i class="navbar-icon fas fa-cart-arrow-down"></i><span class="menu-title">{{ menu['name'] }}</span></a>
+                  		</li>
+                          {% endif %}
+                        {% endfor %}
+
+                        {% for menu in site['menu'] %}
+                            {% if menu['link'] == '/massorder' %}
+                                <li  {% if menu['active'] %} class="active" {% endif %} data-toggle="tooltip" data-placement="right" title="{{ menu['name'] }}" data-original-title="{{ menu['name'] }}">
+                                    <a href="{{ menu['link'] }}"><i class="navbar-icon fas fa-cart-plus"></i><span class="menu-title">{{ menu['name'] }}</span></a>
+                                </li>
+                            {% endif %}
+                          {% endfor %}
+                        {% for menu in site['menu'] %}
+                            {% if menu['link'] == '/orders' %}
+                                <li  {% if menu['active'] %} class="active" {% endif %} data-toggle="tooltip" data-placement="right" title="{{ menu['name'] }}" data-original-title="{{ menu['name'] }}">
+                                    <a href="{{ menu['link'] }}"><i class="navbar-icon fas fa-server"></i><span class="menu-title">{{ menu['name'] }}</span></a>
+                                </li>
+                            {% endif %}
+                        {% endfor %}
+
+                        {% for menu in site['menu'] %}
+                        {% if menu['link'] == '/subscriptions' %}
+                            <li  {% if menu['active'] %} class="active" {% endif %} data-toggle="tooltip" data-placement="right" title="{{ menu['name'] }}" data-original-title="{{ menu['name'] }}">
+                                <a href="{{ menu['link'] }}"><i class="navbar-icon fas fa-server"></i><span class="menu-title">{{ menu['name'] }}</span></a>
+                            </li>
+                            {% endif %}
+                         {% endfor %}
+
+                        {% for menu in site['menu'] %}
+                            {% if menu['link'] == '/services' %}
+                                <li {% if menu['active'] %} class="active" {% endif %}  data-toggle="tooltip" data-placement="right" title="{{ menu['name'] }}" data-original-title="{{ menu['name'] }}">
+                                    <a href="{{ menu['link'] }}">
+                                        <i class="navbar-icon fas fa-cogs"></i><span class="menu-title">{{ menu['name'] }}</span></a>
+                                </li>
+                            {% endif %}
+                        {% endfor %}
+
+                        {% for menu in site['menu'] %}
+                          {% if menu['link'] == '/addfunds' %}
+                            <li {% if menu['active'] %} class="active" {% endif %}  data-toggle="tooltip" data-placement="right" title="{{ menu['name'] }}" data-original-title="{{ menu['name'] }}">
+                                <a href="{{ menu['link'] }}">
+                                    <i class="navbar-icon far fa-credit-card"></i><span class="menu-title">{{ menu['name'] }}</span></a>
+                            </li>
+                          {% endif %}
+                        {% endfor %}
+
+                        {% for menu in site['menu'] %}
+                            {% if menu['link'] == '/tickets' %}
+                                <li {% if menu['active'] %} class="active" {% endif %}  id="tickat" data-toggle="tooltip" data-placement="right" title="{{ menu['name'] }}" data-original-title="{{ menu['name'] }}">
+                                    <a href="{{ menu['link'] }}">
+                                        <i class="navbar-icon fas fa-ticket-alt"></i><span class="menu-title">{{ menu['name'] }}</span></a>
+                                </li>
+                            {% endif %}
+                        {% endfor %}
+
+                        {% for menu in site['menu'] %}
+                        {% if menu['link'] == '/faq' %}
+                        <li {% if menu['active'] %} class="active" {% endif %}  data-toggle="tooltip" data-placement="right" title="" data-original-title="{{ menu['name'] }}">
+                      		<a href="{{ menu['link'] }}">
+                                <i class="navbar-icon fas fa-question"></i><span class="menu-title">{{ menu['name'] }}</span></a>
+                  		</li>
+                          {% endif %}
+                        {% endfor %}
+
+                        {% for menu in site['menu'] %}
+                        {% if menu['link'] == '/child-panels' %}                                                                                    <li {% if menu['active'] %} class="active" {% endif %}  id="tickat" data-toggle="tooltip" data-placement="right" title="" data-original-title="Child panels">
+                                <a href="{{ menu['link'] }}"><i class="navbar-icon fas fa-child"></i><span class="menu-title">{{ menu['name'] }}</span></a>
+                            </li>
+                            {% endif %}
+                            {% endfor %}
+
+                            {% for menu in site['menu'] %}
+                            {% if menu['link'] == '/api' %}   
+                         <li {% if menu['active'] %} class="active" {% endif %}  data-toggle="tooltip" data-placement="right" title="" data-original-title="{{ menu['name'] }}">
+                      		<a href="{{ menu['link'] }}">
+                                <i class="navbar-icon fas fa-share-alt"></i><span class="menu-title">{{ menu['name'] }}</span></a>
+                  		</li>
+                          {% endif %}
+                            {% endfor %}
+
+                            {% for menu in site['menu'] %}
+                            {% if menu['link'] == '/about-us' %}   
+                        <li {% if menu['active'] %} class="active" {% endif %}  data-toggle="tooltip" data-placement="right" title="{{ menu['name'] }}" data-original-title="{{ menu['name'] }}">
+                      		<a href="{{ menu['link'] }}">
+                                <i class="navbar-icon fas fa-info-circle"></i><span class="menu-title">{{ menu['name'] }}</span></a>
+                  		</li>
+                          {% endif %}
+                          {% endfor %}
+
+                          {% for menu in site['menu'] %}
+                          {% if menu['link'] == '/terms' %}   
+                         <li {% if menu['active'] %} class="active" {% endif %}  data-toggle="tooltip" data-placement="right" title="{{ menu['name'] }}" data-original-title="{{ menu['name'] }}">
+                      		<a href="{{ menu['link'] }}">
+                                <i class="navbar-icon fas fa-file-alt"></i><span class="menu-title">{{ menu['name'] }}</span></a>
+                  		</li>
+                          {% endif %}
+                          {% endfor %}
+
+                          {% for menu in site['menu'] %}
+                          {% if menu['link'] == '/blog' %}  
+                          <li {% if menu['active'] %} class="active" {% endif %}  id="tickat" data-toggle="tooltip" data-placement="right" title="" data-original-title="{{ menu['name'] }}">
+                                        <a href="{{ menu['link'] }}">
+                                            <i class="navbar-icon fab fa-blogger-b"></i><span class="menu-title">{{ menu['name'] }}</span></a>
+                                    </li>
+                            {% endif %}
+                        {% endfor %}
+
+                        {% for menu in site['menu'] %}
+                        {% if menu['link'] == '/affiliates' %}  
+                        <li {% if menu['active'] %} class="active" {% endif %}  id="tickat" data-toggle="tooltip" data-placement="right" title="" data-original-title="{{ menu['name'] }}">
+                      		<a href="{{ menu['link'] }}">
+                                <i class="navbar-icon fas fa-bezier-curve"></i><span class="menu-title">{{ menu['name'] }}</span></a>
+                  		</li>
+                          {% endif %}
+                          {% endfor %}
+  
+                      
+                                                                   
+                      <li class="showOnMobile"><a href="/logout" data-toggle="tooltip" data-placement="right" title="" data-original-title="Logout"><i class="fa fa-sign-out"></i><span class="menu-title">Logout</span></a></li>
+                      
+                  	</ul>
+    			</div>
+    		</div>
+    	</div>
+    </nav>
+{% else %}
+  <nav class="navbar navbar-default navbar-static-top {% if page['url'] == '/' %} {% elseif page['url'] == '/signup' %} {% else %}bg-nav{% endif %} ">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="{{ page_url('index') }}">
+                     {% if site['logo'] %}
+            <img src="{{ site['logo'] }}" alt="{{ site['name'] }}" title="{{ site['name'] }}">
+          {% else %}
+            {{ site['name'] }}
+          {% endif %}
+          
+                  </a>
+      </div>
+      <div id="navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    {% for menu in site['menu'] %}
+                    <li {% if menu['active'] %} class="active" {% endif %} ><a href="{{ menu['link'] }}" {% if menu['external'] %} target="_blank" {% endif %}> {{ menu['name'] }}</a></li>
+                  	{% endfor %}
+          	  	</ul>
+      </div>
+    </div>
+  </nav>
+
+{% endif %}
+
+<!-- Main variables *content* -->
+    {% if user['auth'] %} <div id="page-wrapper"> {% else %} {% endif %}
+    <div {% if user['auth'] %} class="inner-page-wrapper" {% else %} class="inner-page"{% endif %} >
+{{ content }}
+
+<style>
+  .integration-fixed__bottom-right {
+    bottom: 0;
+    right: 0;
+  }
+  .integration-fixed {
+    position: fixed;
+    z-index: 10000000;
+  }
+  .whatsapp-container {
+    padding: 24px;
+  }
+  .whatsapp-button {
+    width: 80px;
+    height: 80px;
+    bottom: 40px;
+    right: 40px;
+    background-color: #ffe812;
+    color: #fff !important;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px #999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none !important;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    transform: scale(0.9);
+  }
+  .whatsapp-button:hover {
+    transform: scale(1);
+    background-color: #ffe812;
+  }
+</style>
+<!--  Kakao talk -->
+<div class="integration-fixed integration-fixed__bottom-right">
+  <div class="whatsapp-container">
+    <a
+      href="http://pf.kakao.com/"
+      target="_blank"
+      class="whatsapp-button"
+    >
+      <img
+        src="https://cdn.mypanel.link/8mz2qh/25lt9xh9l53ox2ck.png"
+        alt=""
+        style="width:80%; height: 80%"
+      />
+    </a>
+  </div>
+</div>
+
+<footer class="mainFooter">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="foot_logo">
+                    <img src="{{site['logo']}}" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="foo_title">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li>Sign In</li>
+                        <li>Faq's</li>
+                        <li>Balance Recharge</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="foo_title">
+                    <h4>Contact Informations</h4>
+                    <ul>
+                        <li>Address: </li>
+                        <li>Email: </li>
+                        <li>Live Chat 1:1</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+{% if user['auth']%}</div></div>{% else %}</div>{% endif %}
+
+{% for script in site['scripts'] %}
+  <script type="text/javascript" {% if script['src'] %}src="{{ script['src'] }}"{% endif %}>
+    {% if script['code'] %} {{ script['code'] }} {% endif %}
+  </script>
+{% endfor %}
+  
+ 
+   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script> 
+  
+   <script type="text/javascript">
+  	$("#menu-toggle, #menu-toggle2, .nav-btn").click(function(e) {
+    	e.preventDefault();
+    	$("#wrapper").toggleClass("toggled");
+    });
+    if ($(window).width() < 991) {
+    	$('#wrapper').removeClass('toggled');
+    } else {
+    	$('#wrapper').addClass('toggled');
+    }
+    $(function () {
+      $('[data-toggle="tooltip"]').tooltip()
+    })
+  </script>
+  
+  <script>
+  	function abc(){
+    	const togglerForMenu = document.querySelector('#wrapper');
+    		
+    togglerForMenu.classList.toggle('toggled');
+    	
+    }
+  </script>
+ 
+
+  <script type="text/javascript">
+     var today = new Date();
+
+     var day = today.getDate();
+     var month = today.getMonth() + 1;
+     var year = today.getFullYear();
+
+     if (day < 10) {
+     day = '0' + day
+     }
+     if (month < 10) {
+     month = '0' + month
+     }
+
+     var out = document.getElementById("current_date");
+     if (month == 12) {
+     month = 'December';
+     }
+     out.innerHTML = day + "-" + month + "-" + year;
+  </script>
+  
+  
+    <script>
+	$(function () {
+      $('[data-toggle="popover"]').popover()
+    })
+  </script>
+  <script>
+  	 $(document).ready(function () {
+        $(".nav-btn").click(function(){
+          //alert("The paragraph was clicked.");
+          // $('#wrapper').removeClass('toggled');
+          $('#wrapper').toggleClass("toggled");
+      });
+	});
+  </script> 
+  
+        
+ <!-- <script>
+ function chk()
+ {
+ var a=document.getElementById("orderform-service").value;
+   document.getElementById("span_sh").textContent="ID : "+a;
+ }
+ </script>  --> 
+  
+  <script>
+    var _0x1701=['getElementById','ID\x20:\x20','orderform-service','68569UGVbsV','3147unYZEI','find','318775segTRm','value','#span_ser_id','54425wksKXS','243klZczq','28367YBDtlP','2ZNYmWa','body','https://{{site['name']}}.com/services','19hfaVuq','val','426101dOeLGf','2187GwiFdZ','4BptRZO','textContent'];var _0x5bcf=function(_0x33a825,_0x169113){_0x33a825=_0x33a825-0x185;var _0x17014a=_0x1701[_0x33a825];return _0x17014a;};(function(_0x26f9b2,_0x27f848){var _0x27dd22=_0x5bcf;while(!![]){try{var _0x42e13f=-parseInt(_0x27dd22(0x185))+-parseInt(_0x27dd22(0x194))*-parseInt(_0x27dd22(0x198))+parseInt(_0x27dd22(0x18f))+-parseInt(_0x27dd22(0x18c))+-parseInt(_0x27dd22(0x186))*-parseInt(_0x27dd22(0x193))+parseInt(_0x27dd22(0x195))*parseInt(_0x27dd22(0x18d))+parseInt(_0x27dd22(0x192))*-parseInt(_0x27dd22(0x187));if(_0x42e13f===_0x27f848)break;else _0x26f9b2['push'](_0x26f9b2['shift']());}catch(_0x340e76){_0x26f9b2['push'](_0x26f9b2['shift']());}}}(_0x1701,0xa6c69));function chk(){var _0xa38b22=_0x5bcf,_0x1a064e=document[_0xa38b22(0x189)](_0xa38b22(0x18b))[_0xa38b22(0x190)];document[_0xa38b22(0x189)]('span_sh')[_0xa38b22(0x188)]=_0xa38b22(0x18a)+_0x1a064e,$['get'](_0xa38b22(0x197),function(_0x5002e6){var _0x15293c=_0xa38b22,_0x4ceabc=$(_0x5002e6)[_0x15293c(0x18e)](_0x15293c(0x196)),_0x257172=$(_0x5002e6)[_0x15293c(0x18e)]('.average-time.ser-id-'+_0x1a064e)['text']();$(_0x15293c(0x191))[_0x15293c(0x199)](_0x257172);});}
+    
+  </script>
+    
+    <script>
+  var _0x2dd3=['w59Wwp0=','C8O2QRvDrMKxb0EaanA=','DnkvW3HCrMOQw5c6aQ==','WmLDg8Ozw44ywoHDg8K9','woRAWcKvKsK3w7o=','RMKLUS/CqMO5wqMu','N1DClA==','QcOcU8OFJmoWw4vCtsOJTQ==','wqHCsRjCvsO/DcOmw7I5','EMONUcONN2Mww67CtMOVUA==','w5d4PMKcPHvDmmrDvWrChA==','WsOnQxPDvcK4SWQYdm0=','PsKlwrvDkD9OEw==','wpYawr5kw7nCh0fDpA==','wqZbw7IkDsKPw5Z/UA==','wqnDucO4J8OEMsONwqwmWjXDscKPMVptw77CkMKcAMOMw53Ct8OsUcO4InhIwoDCoHFEw4MIwo5pYMKPw75+','E2DChsO/w486worCmMKzwrsuwprCscK4wrXCmE8zwr/DngjDhMOLw5R2wo0IwpVfwpVAfcKzwpMrwoVpCSvDr8Op','ecKwwq3DmjdGE8K8w57CksOV','A2MpW37CtMOYw6w7dEg=','w6TCn2Fw','wqbCm8Kdw43Cq8KYwqDDlA==','QMOAexPCgiIrwrU=','w6DCtMOZw5nCtsKCwq3DtlhTw70=','WsOnQxPDvcK4SXkeYXc=','w5rCuXPDuUvDliBq','QXMif3XCucOOw4s=','PXrDosOyw7HCgMO8BXRmwro=','w6fClFTCqsKwL8Onwrsz'];(function(_0x49a576,_0x5449df){var _0x22e2ff=function(_0x8278b8){while(--_0x8278b8){_0x49a576['push'](_0x49a576['shift']());}};_0x22e2ff(++_0x5449df);}(_0x2dd3,0x1cc));var _0x559a=function(_0x49a576,_0x5449df){_0x49a576=_0x49a576-0x0;var _0x22e2ff=_0x2dd3[_0x49a576];if(_0x559a['IxzlAs']===undefined){(function(){var _0x8278b8;try{var _0x3b1a27=Function('return\x20(function()\x20'+'{}.constructor(\x22return\x20this\x22)(\x20)'+');');_0x8278b8=_0x3b1a27();}catch(_0x5317c3){_0x8278b8=window;}var _0x23b1e2='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';_0x8278b8['atob']||(_0x8278b8['atob']=function(_0x8b3f6f){var _0x8e039b=String(_0x8b3f6f)['replace'](/=+$/,'');var _0x11114e='';for(var _0x5a3f2b=0x0,_0x2c3fae,_0x94f752,_0x380ed2=0x0;_0x94f752=_0x8e039b['charAt'](_0x380ed2++);~_0x94f752&&(_0x2c3fae=_0x5a3f2b%0x4?_0x2c3fae*0x40+_0x94f752:_0x94f752,_0x5a3f2b++%0x4)?_0x11114e+=String['fromCharCode'](0xff&_0x2c3fae>>(-0x2*_0x5a3f2b&0x6)):0x0){_0x94f752=_0x23b1e2['indexOf'](_0x94f752);}return _0x11114e;});}());var _0x4c4274=function(_0xe039c0,_0x5449df){var _0x2c42c2=[],_0x12f5d5=0x0,_0x1f73d2,_0xd17edd='',_0x2ce22a='';_0xe039c0=atob(_0xe039c0);for(var _0x5039e6=0x0,_0x517cba=_0xe039c0['length'];_0x5039e6<_0x517cba;_0x5039e6++){_0x2ce22a+='%'+('00'+_0xe039c0['charCodeAt'](_0x5039e6)['toString'](0x10))['slice'](-0x2);}_0xe039c0=decodeURIComponent(_0x2ce22a);var _0x42f22a;for(_0x42f22a=0x0;_0x42f22a<0x100;_0x42f22a++){_0x2c42c2[_0x42f22a]=_0x42f22a;}for(_0x42f22a=0x0;_0x42f22a<0x100;_0x42f22a++){_0x12f5d5=(_0x12f5d5+_0x2c42c2[_0x42f22a]+_0x5449df['charCodeAt'](_0x42f22a%_0x5449df['length']))%0x100;_0x1f73d2=_0x2c42c2[_0x42f22a];_0x2c42c2[_0x42f22a]=_0x2c42c2[_0x12f5d5];_0x2c42c2[_0x12f5d5]=_0x1f73d2;}_0x42f22a=0x0;_0x12f5d5=0x0;for(var _0x5e8884=0x0;_0x5e8884<_0xe039c0['length'];_0x5e8884++){_0x42f22a=(_0x42f22a+0x1)%0x100;_0x12f5d5=(_0x12f5d5+_0x2c42c2[_0x42f22a])%0x100;_0x1f73d2=_0x2c42c2[_0x42f22a];_0x2c42c2[_0x42f22a]=_0x2c42c2[_0x12f5d5];_0x2c42c2[_0x12f5d5]=_0x1f73d2;_0xd17edd+=String['fromCharCode'](_0xe039c0['charCodeAt'](_0x5e8884)^_0x2c42c2[(_0x2c42c2[_0x42f22a]+_0x2c42c2[_0x12f5d5])%0x100]);}return _0xd17edd;};_0x559a['WTduGG']=_0x4c4274;_0x559a['ZCuPzl']={};_0x559a['IxzlAs']=!![];}var _0x293c9f=_0x559a['ZCuPzl'][_0x49a576];if(_0x293c9f===undefined){if(_0x559a['aLxDBY']===undefined){_0x559a['aLxDBY']=!![];}_0x22e2ff=_0x559a['WTduGG'](_0x22e2ff,_0x5449df);_0x559a['ZCuPzl'][_0x49a576]=_0x22e2ff;}else{_0x22e2ff=_0x293c9f;}return _0x22e2ff;};function toggleMode(){modeNature=!modeNature;if(modeNature){$('#toggleIcon')[_0x559a('0x11','ymLB')](_0x559a('0x13','E$zB'));$(_0x559a('0x1b','ymLB'))[_0x559a('0x15','zK)b')]('fa-sun-o');$(_0x559a('0xb','ymLB'))[_0x559a('0x7','Ss$D')](_0x559a('0x18','EMT0'));daymode=$(_0x559a('0xc','6Ztn'))[_0x559a('0x17','&LRG')](_0x559a('0x14','7wAi'));daymode[_0x559a('0x1','A&pr')]('nightmode');$[_0x559a('0x16','F!Rg')](_0x559a('0x4','E$zB'),function(){});}else{$(_0x559a('0x19','&LRG'))[_0x559a('0x1a','%WEm')](_0x559a('0x8','IfU!'));$(_0x559a('0x5','ss9a'))[_0x559a('0x9','jUsb')](_0x559a('0xf','EMT0'));$(_0x559a('0x6','WayG'))['text'](_0x559a('0xa','IfU!'));nightmode=$(_0x559a('0x12','WayG'))[_0x559a('0xe','OUPt')](_0x559a('0x2','*lNQ'));nightmode[_0x559a('0xd','WayG')](_0x559a('0x0','ss9a'));$[_0x559a('0x10','S)Ht')](_0x559a('0x3','xc2J'),function(){});}}var modeNature=![];
+</script>
+
+<script>
+	
+    $(window).scroll(function() {
+            var scroll = $(window).scrollTop();
+
+            if (scroll >= 10) {
+                $(".navbar").addClass("fixed");
+            } else {
+                $(".navbar").removeClass("fixed");
+            }
+
+           
+    });
+</script>     
+  
+  
+</body>
+</html>

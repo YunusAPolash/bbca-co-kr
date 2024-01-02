@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.mypanel.link/css/font-awesome/css/all.min.css">
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+  />
+
+    <link rel="stylesheet" href="https://res.cloudinary.com/grow-follows/raw/upload/v1656761434/growfollows_css/keyframes_xs6iyi.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/odometer.js/0.4.7/odometer.min.js" integrity="sha512-v3fZyWIk7kh9yGNQZf1SnSjIxjAKsYbg6UQ+B+QxAZqJQLrN3jMjrdNwcxV6tis6S0s1xyVDZrDz9UoRLfRpWw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/odometer.js/0.4.7/themes/odometer-theme-default.min.css" integrity="sha512-/k/mL9TQSZHAqtVqXJAiy5bt2w1P7gxdra0UlnFjVHF9a/LC2vxt7otx3BMcn79V/DZsPRwdw8tPlwbElMnIAw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/odometer.js/0.4.7/themes/odometer-theme-car.min.css" integrity="sha512-w3mbR/tTpQrWGeZtcH0j9UJkal9nioRt95WNLsMwdPv3X0ytERqJjCi89WPX0NmzRVq5L98n1MHSKSlzpRiJFA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
+
+
+    <link rel="stylesheet" href="./CSS/bootstrap.css">
+    <link rel="stylesheet" href="./CSS/style.css">
+</head>
+<body>
+    
+    <!-- Navbar without login -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
+        <div class="container">
+          <a class="navbar-brand" href="#">Navbar</a>
+
+          <div class="usernav_area" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">둘러보기
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="#">
+                    로그인
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="#">
+                    회원가입
+                </a>
+              </li>
+            </ul>
+           
+          </div>
+        </div>
+      </nav>
+      <!-- Navbar end  -->
+<section id="v2_banner">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-12">
+              <div class="v2_banner_main_content">
+                <div class="top_small_title">
+                    <span>인스타그램</span>
+                    <span>페이스북</span>
+                    <span>유튜브</span>
+                    <span>웹사이트</span>
+                    <span>네이버</span>
+                    <span>마케팅 대행의뢰</span>
+                </div>
+                <h1 class="main_big_title">
+                    THESTARGRAM
+                </h1>
+                <p>
+                    당신의 SNS 브랜드 가치를 높여 보세요 <br>
+                    인플루언서가 될 수 있도록 도와드리겠습니다
+                </p>
+                <div class="v2_btn_wrap button_wrap">
+                    <a href="" class="btn btn_home">비회원 둘러보기</a>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+    <div class="all_bg_shapes">
+        <img src="./IMG/left-bottom_shapes.png" class="left_bottom_shape" alt="">
+        <img src="./IMG/top-right-shape.png" alt="" class="right_top_shape">
+        <img src="./IMG/double_round.png" alt="" class="dobule_round">
+        <img src="./IMG/ring.png" class="ring ring-1" alt="">
+        <img src="./IMG/ring.png" class="ring ring-2" alt="">
+        <img src="./IMG/ring.png" class="ring ring-3" alt="">
+        <img src="./IMG/ring.png" class="ring ring-4" alt="">
+        <img src="./IMG/ring.png" class="ring ring-5" alt="">  
+        <img src="./IMG/dot_shapes.png" class="dot_shape dot_shape-1"  alt="">
+        <img src="./IMG/dot_shapes.png" class="dot_shape dot_shape-2"  alt="">
+        <img src="./IMG/dot_shapes.png" class="dot_shape dot_shape-3"  alt="">
+    </div>
+</section>
+<section id="v2_counter">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="v2_counter_item counter-1">
+                    <h5 class="count_text">
+                        현재 진행중인 주문
+                    </h5>
+                    <div class="count_number">
+                        <div id="counter1" class="odometer">9999999</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="v2_counter_item counter-2">
+                    <h5 class="count_text">
+                        현재 진행중인 주문
+                    </h5>
+                    <div class="count_number">
+                        <div id="counter2" class="odometer">9999999</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="v2_counter_item counter-3">
+                    <h5 class="count_text">
+                        현재 진행중인 주문
+                    </h5>
+                    <div class="count_number">
+                        <div id="counter3" class="odometer">9999999</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="v2_services">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-12">
+                <div class="def_title text-center">
+                    <h2>Services</h2>
+                    <span class="line"></span>
+                    <p>THESTARGRAM는 광고 대행사, 마케팅 업체들이 이용하는 도매 사이트로 인스타그램은 물론 <br>
+                        페이스북, 유트브, 네이버 등 모든 SNS와 다양한 웹사이트를 셀프로 관리가 가능합니다.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3 col-md-3 col-6">
+                <div class="v2_def_item_wrap">
+                    <div class="item__icon">
+                        <img src="./IMG/social_media/dszskl1hhpeag4pl 1.png" alt="">
+                    </div>
+                    <h2>Instagram</h2>
+                    <p>
+                      좋아요, 팔로워, 댓글 <br>
+                      24시간 관리
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-6">
+              <div class="v2_def_item_wrap">
+                <div class="item__icon">
+                    <img src="./IMG/social_media/kigk1sot1eemhkrc 1.png" alt="">
+                </div>
+                <h2>Facebook</h2>
+                <p>
+                  좋아요, 팔로워, 댓글 <br>
+                  24시간 관리
+                </p>
+            </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-6">
+              <div class="v2_def_item_wrap">
+                <div class="item__icon">
+                    <img src="./IMG/social_media/fq2yj5as4jah3plj 1.png" alt="">
+                </div>
+                <h2>Youtube</h2>
+                <p>
+                  좋아요, 팔로워, 댓글 <br>
+                  24시간 관리
+                </p>
+            </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-6">
+              <div class="v2_def_item_wrap">
+                <div class="item__icon">
+                    <img src="./IMG/social_media/u2zk7ajcifhu8ufa 1.png" alt="">
+                </div>
+                <h2>Etc</h2>
+                <p>
+                  좋아요, 팔로워, 댓글 <br>
+                  24시간 관리
+                </p>
+            </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="v2_advantage">
+  <div class="container">
+      <div class="row">
+          <div class="col-lg-12 col-md-12 col-12">
+              <div class="def_title text-center">
+                  <h2>ADVANTAGE</h2>
+                  <span class="line"></span>
+                  <p>
+                    THESTARGRAM 는 브랜드의 이미 및 제품 홍보를 위해 수년간의 노하우로 만들어진 <br>
+24시간 자동 주문처리 시스템으로 빠르고 정확한 성장을 도와드립니다.
+                  </p>
+              </div>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-lg-3 col-md-3 col-6">
+              <div class="v2_def_item_wrap">
+                  <div class="item__icon">
+                    <iconify-icon icon="mdi:cog-outline"></iconify-icon>
+
+                  </div>
+                  <h2>주문</h2>
+                  <p>
+                    24시간 즉시 자동 처리 및 관리
+                  </p>
+              </div>
+          </div>
+          <div class="col-lg-3 col-md-3 col-6">
+            <div class="v2_def_item_wrap">
+              <div class="item__icon">
+                <iconify-icon icon="mdi:user-lock-open-outline"></iconify-icon>
+
+              </div>
+              <h2>보호</h2>
+              <p>
+                철저하게 보호되는 암호화 서버
+              </p>
+          </div>
+          </div>
+          <div class="col-lg-3 col-md-3 col-6">
+            <div class="v2_def_item_wrap">
+              <div class="item__icon">
+                <iconify-icon icon="gridicons:multiple-users"></iconify-icon>
+
+              </div>
+              <h2>리얼 유저</h2>
+              <p>
+                실제 한국인으로 정확한 효과
+              </p>
+          </div>
+          </div>
+          <div class="col-lg-3 col-md-3 col-6">
+            <div class="v2_def_item_wrap">
+              <div class="item__icon">
+                <iconify-icon icon="bi:rocket"></iconify-icon>
+              </div>
+              <h2>빠른 속도</h2>
+              <p>
+                즉시 가동되는 빠른 주문처리
+              </p>
+          </div>
+          </div>
+      </div>
+  </div>
+</section>
+<section id="v2_testimonials">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-12">
+        <!-- <div class="testimonials_wraper">
+          <div>
+            <div class="testimonials_item">
+              <div class="testimonials_user mb-3">
+                <div class="avatar">
+                  <img src="./IMG/user_av-1.png" alt="">
+                </div>
+                <h5> <span class="clone_left">“</span> hwang*** 님 <span class="clone_right">”</span> </h5>
+              </div> 
+              <div class="text text-center">
+                아무것도 모르는 제가 마케팅 고수가 될 수 있도록 하나부터 열까지 친절하게 상담해주셔서 고맙습니다. Thestargram 이제는 많이 웃고 지냅니다.
+              </div>
+              
+            </div>
+          </div>
+
+          <div>
+            <div class="testimonials_item">
+              <div class="testimonials_user mb-3">
+                <div class="avatar">
+                  <img src="./IMG/user_av-1.png" alt="">
+                </div>
+                 <h5> <span class="clone_left">“</span> hwang*** 님 <span class="clone_right">”</span> </h5>
+              </div> 
+              <div class="text text-center">
+                아무것도 모르는 제가 마케팅 고수가 될 수 있도록 하나부터 열까지 친절하게 상담해주셔서 고맙습니다. Thestargram 이제는 많이 웃고 지냅니다.
+              </div>
+              
+            </div>
+          </div>
+
+
+          <div>
+            <div class="testimonials_item">
+              <div class="testimonials_user mb-3">
+                <div class="avatar">
+                  <img src="./IMG/user_av-1.png" alt="">
+                </div>
+                 <h5> <span class="clone_left">“</span> hwang*** 님 <span class="clone_right">”</span> </h5>
+              </div> 
+              <div class="text text-center">
+                아무것도 모르는 제가 마케팅 고수가 될 수 있도록 하나부터 열까지 친절하게 상담해주셔서 고맙습니다. Thestargram 이제는 많이 웃고 지냅니다.
+              </div>
+              
+            </div>
+          </div>
+
+
+          <div>
+            <div class="testimonials_item">
+              <div class="testimonials_user mb-3">
+                <div class="avatar">
+                  <img src="./IMG/user_av-1.png" alt="">
+                </div>
+                 <h5> <span class="clone_left">“</span> hwang*** 님 <span class="clone_right">”</span> </h5>
+              </div> 
+              <div class="text text-center">
+                아무것도 모르는 제가 마케팅 고수가 될 수 있도록 하나부터 열까지 친절하게 상담해주셔서 고맙습니다. Thestargram 이제는 많이 웃고 지냅니다.
+              </div>
+              
+            </div>
+          </div>
+
+          <div>
+            <div class="testimonials_item">
+              <div class="testimonials_user mb-3">
+                <div class="avatar">
+                  <img src="./IMG/user_av-1.png" alt="">
+                </div>
+                 <h5> <span class="clone_left">“</span> hwang*** 님 <span class="clone_right">”</span> </h5>
+              </div> 
+              <div class="text text-center">
+                아무것도 모르는 제가 마케팅 고수가 될 수 있도록 하나부터 열까지 친절하게 상담해주셔서 고맙습니다. Thestargram 이제는 많이 웃고 지냅니다.
+              </div>
+              
+            </div>
+          </div>
+
+        </div> -->
+      
+        <!-- Slider main container -->
+          <div class="swiper">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+              <!-- Slides -->
+              <div class="swiper-slide">
+                <div class="testimonials_item">
+                  <div class="testimonials_user mb-3">
+                    <div class="avatar">
+                      <img src="./IMG/user_av-1.png" alt="">
+                    </div>
+                    <h5> <span class="clone_left">“</span> hwang*** 님 <span class="clone_right">”</span> </h5>
+                  </div> 
+                  <div class="text text-center">
+                    아무것도 모르는 제가 마케팅 고수가 될 수 있도록 하나부터 열까지 친절하게 상담해주셔서 고맙습니다. Thestargram 이제는 많이 웃고 지냅니다.
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="testimonials_item">
+                  <div class="testimonials_user mb-3">
+                    <div class="avatar">
+                      <img src="./IMG/user_av-1.png" alt="">
+                    </div>
+                    <h5> <span class="clone_left">“</span> hwang*** 님 <span class="clone_right">”</span> </h5>
+                  </div> 
+                  <div class="text text-center">
+                    아무것도 모르는 제가 마케팅 고수가 될 수 있도록 하나부터 열까지 친절하게 상담해주셔서 고맙습니다. Thestargram 이제는 많이 웃고 지냅니다.
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="swiper-slide">
+                <div class="testimonials_item">
+                  <div class="testimonials_user mb-3">
+                    <div class="avatar">
+                      <img src="./IMG/user_av-1.png" alt="">
+                    </div>
+                    <h5> <span class="clone_left">“</span> hwang*** 님 <span class="clone_right">”</span> </h5>
+                  </div> 
+                  <div class="text text-center">
+                    아무것도 모르는 제가 마케팅 고수가 될 수 있도록 하나부터 열까지 친절하게 상담해주셔서 고맙습니다. Thestargram 이제는 많이 웃고 지냅니다.
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="swiper-slide">
+                <div class="testimonials_item">
+                  <div class="testimonials_user mb-3">
+                    <div class="avatar">
+                      <img src="./IMG/user_av-1.png" alt="">
+                    </div>
+                    <h5> <span class="clone_left">“</span> hwang*** 님 <span class="clone_right">”</span> </h5>
+                  </div> 
+                  <div class="text text-center">
+                    아무것도 모르는 제가 마케팅 고수가 될 수 있도록 하나부터 열까지 친절하게 상담해주셔서 고맙습니다. Thestargram 이제는 많이 웃고 지냅니다.
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="swiper-slide">
+                <div class="testimonials_item">
+                  <div class="testimonials_user mb-3">
+                    <div class="avatar">
+                      <img src="./IMG/user_av-1.png" alt="">
+                    </div>
+                    <h5> <span class="clone_left">“</span> hwang*** 님 <span class="clone_right">”</span> </h5>
+                  </div> 
+                  <div class="text text-center">
+                    아무것도 모르는 제가 마케팅 고수가 될 수 있도록 하나부터 열까지 친절하게 상담해주셔서 고맙습니다. Thestargram 이제는 많이 웃고 지냅니다.
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="swiper-slide">
+                <div class="testimonials_item">
+                  <div class="testimonials_user mb-3">
+                    <div class="avatar">
+                      <img src="./IMG/user_av-1.png" alt="">
+                    </div>
+                    <h5> <span class="clone_left">“</span> hwang*** 님 <span class="clone_right">”</span> </h5>
+                  </div> 
+                  <div class="text text-center">
+                    아무것도 모르는 제가 마케팅 고수가 될 수 있도록 하나부터 열까지 친절하게 상담해주셔서 고맙습니다. Thestargram 이제는 많이 웃고 지냅니다.
+                  </div>
+                </div>
+              </div>
+             
+            </div>
+
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
+
+
+      </div>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3 col-md-3 col-12">
+        <div class="footer_logo d-flex align-items-center h-100">
+          <img src="./IMG/Thestargram.png" alt="" width="300" class="logo">
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6 col-12">
+        <p class="">
+          회사명 : XXXX | 김병조  주소 :  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX <br>
+          통신판매업신고 : XXXXXXXXXXXX  | 사업자등록번호 : XXX-XX-XXXXX <br>
+          대표번호 : XXX-XXXX-XXXX | 이메일 : Thestargram@naver.com
+        </p>
+        <p class="">
+          Thestargram <br>
+        페이스북 좋아요, 팔로워 늘리기 인스타 좋아요, 팔로워, 댓글 늘리기 <br>
+        유튜브 영상 조회수, 좋아요 늘리기 틱톡 좋아요, 팔로워, 조회수 늘리기
+        </p>
+      </div>
+      <div class="col-lg-3 col-md-3 col-12">
+        <div class="foo_link d-flex align-items-center h-100">
+          <a href="">이용약관</a>    |   <a href="">개인정보취급방침</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+    <!-- JS -->
+    <script src="./JS/bootstrap.js"></script>
+    <script src="./JS/script.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script>
+        window.odometerOptions = {
+            auto: false, // Don't automatically initialize everything with class 'odometer'
+            selector: '.my-numbers', // Change the selector used to automatically find things to be animated
+            format: '(,ddd).dd', // Change how digit groups are formatted, and how many digits are shown after the decimal point
+            duration: 3000, // Change how long the javascript expects the CSS animation to take
+            theme: 'car', // Specify the theme (if you have more than one theme css file on the page)
+            animation: 'count' // Count is a simpler animation method which just increments the value,
+                                // use it when you're looking for something more subtle.
+            };
+    </script>
+    <script>
+        setTimeout(function(){
+            counter1.innerHTML = `1058621`;
+        }, 1000);
+        setTimeout(function(){
+            counter2.innerHTML = `1069548`;
+        }, 1000);
+        setTimeout(function(){
+            counter3.innerHTML = `1011436`;
+        }, 1000);
+    </script>
+    <script>
+      const swiper = new Swiper('.swiper', {
+        // Optional parameters
+        direction: 'horizontal',
+        loop: true,
+        slidesPerView: 3,
+        spaceBetween: 10,
+        breakpoints: {
+          // when window width is >= 320px
+          320: {
+            slidesPerView: 1,
+            spaceBetween: 20
+          },
+          // when window width is >= 480px
+          480: {
+            slidesPerView: 1,
+            spaceBetween: 30
+          },
+          // when window width is >= 640px
+          992: {
+            slidesPerView: 1,
+            spaceBetween: 40
+          },
+          // when window width is >= 1000px
+          1000: {
+            slidesPerView: 3,
+            spaceBetween: 40
+          }
+        },
+        // If we need pagination
+        pagination: {
+          el: '.swiper-pagination',
+        },
+
+        // Navigation arrows
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+
+        
+      });
+    </script>
+</body>
+</html>

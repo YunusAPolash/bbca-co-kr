@@ -1,0 +1,58 @@
+<section id="box_log_up">
+  <div class="container">
+     <div class="row">
+          <div class="col-md-2">
+          </div>
+          <div class="col-md-8">
+              <div class="card card-v2">
+                  <div class="card-body">
+                      <div class="form_control_box">
+                          <h2 class="form-title text-center mb-2">
+                            회원가입
+                          </h2>
+                          <form {% if site['rtl'] %}class="rtl-form"{% endif %} action="" method="post">
+                            {% if error %}
+                              <div class="alert alert-dismissible alert-danger fade show">
+                                {{ errorMessage }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                              </div>
+                            {% endif %}
+                            {% if success %}
+                              <div class="alert alert-success  alert-dismissible fade show" role="alert">
+                                {{successText}}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                            {% endif %}
+                            {% for field in fields %}
+                              <div class="form-group">
+                                <label for="{{ field.code }}" class="control-label">{{ lang(field.label) }}</label>
+                                <input type="{{ field.type }}" class="form-control" id="{{ field.code }}" value="{{ field.value }}" name="RegistrationForm[{{ field.code }}]">
+                              </div>
+                            {% endfor %}
+                            {% if site['captcha'] %}
+                              {{ captchaCode }}
+                            {% endif %}
+                            {% if check_agreement %}
+                              <div class="form-group">
+                                <div class="checkbox">
+                                  <label>
+                                    <input type="checkbox" class="terms-accept-checkbox" name="RegistrationForm[termsofservice]"> {{ lang('signup.accept_terms_text') }} <a href="{{ page_url('terms') }}" target="_blank">{{ lang('terms.signup_checkbox') }}</a>
+                                  </label>
+                                </div>
+                              </div>
+                            {% endif %}
+                  
+                            <input type="hidden" name="_csrf" value="{{csrftoken}}">
+                            <button type="submit" class="btn btn-primary v2 w-100">{{ lang('signup.button') }}</button>
+                            <div class="text-center mt-3">
+                              <span class="pull-right pull-right-middle">{{ lang('signup.text') }} <a href="{{ page_url('signin') }}">{{ lang('signin.title') }}</a></span>
+                            </div>
+                          </form>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-2"></div>
+     </div>
+  </div>
+</section>

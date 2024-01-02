@@ -1,0 +1,72 @@
+<section id="viewTickets" class="py-3">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-2 col-md-2 col-12"></div>
+            <div class="col-lg-8 col-md-8 col-12">
+                <div class="card card-v2 mb-3">
+                    <div class="card-body">
+                        <h2 class="mb-2">{{ ticket['thema'] }}</h2>
+                        <hr>
+                        <br>
+                        {% if messageList %}
+                        {% for message in messageList %}
+                            {% if message['support'] == 0 %}
+                            <div class="row ticket-message-block ticket-message-right message_user">
+                                <div class="col-md-1"></div>
+                                <div class="col-md-11">
+                                <div class="ticket-message">
+                                    <div class="message">{{ message['message'] }}</div>
+                                </div>
+                                <div class="info text-right">
+                                    <strong>{{ message['author'] }}</strong>
+                                    <small class="text-muted">{{ message['time'] }}</small>
+                                </div>
+                                </div>
+                                <div class="col-md-1"></div>
+                            </div>
+                            {% else %}
+                            <div class="row ticket-message-block ticket-message-left message_admin">
+                                <div class="col-md-11">
+                                <div class="ticket-message">
+                                    <div class="message">{{ message['message'] }}</div>
+                                </div>
+                                <div class="info">
+                                    <strong>{{ message['author'] }}</strong>
+                                    <small class="text-muted">{{ message['time'] }}</small>
+                                </div>
+                                </div>
+                                <div class="col-md-1"></div>
+                            </div>
+                            {% endif %}
+                        {% endfor %}
+                        {% endif %}
+                        <br>
+                        <hr>
+                        <br>
+                        {% if canAddMessage %}
+                        <div class="row">
+                            <div class="col-md-12">
+                            <form {% if site['rtl'] %} class="rtl-form"{% endif %} method="post" action="">
+                                {% if error %}
+                                <div class="alert alert-dismissible alert-danger {% if site['rtl'] %} rtl-alert {% endif %}">
+                                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                                    {{ errorMessage }}
+                                </div>
+                                {% endif %}
+                                <div class="form-group panel-border-top">
+                                <label for="message" class="control-label">{{ lang('tickets.message') }}</label>
+                                <textarea id="message" rows="5" class="form-control" name="TicketMessageForm[message]"></textarea>
+                                </div>
+                                <input type="hidden" name="_csrf" value="{{csrftoken}}">
+                                <button type="submit" class="btn btn-primary v2 w-100">{{ lang('tickets.button.reply') }}</button>
+                            </form>
+                            </div>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-2 col-12"></div>
+        </div>
+    </div>
+</section>
