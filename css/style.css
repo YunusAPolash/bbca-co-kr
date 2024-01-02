@@ -170,3 +170,426 @@ footer{
 .footer__item__wrap .footer_txt strong{
     font-weight: 700;
 }
+
+#page_title{
+    padding: 70px 0px;
+    padding-top: 130px;
+    background: linear-gradient(#0000009d, #0000009d),url(./../images/page-title-bg.png);
+}
+
+#page_title h1{
+    font-family: var(--font-main);
+    font-weight: 700;
+    font-size: 45px;
+    margin-bottom: 0px;
+    color: var(--white);
+}
+
+#services__text__page__wrap{
+    padding: 80px 0px;
+}
+
+.serv_sec_title{
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    font-size: 20px;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.serv_sec_title .span_square{
+    display: block;
+    width: 15px;
+    height: 15px;
+    background: var(--primary-color);
+}
+
+.service_post_item{
+    margin-bottom:40px;
+}
+
+.service_post_item .post_image img{
+    width: 100%;
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+
+.service_post_item h3{
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--black);
+    margin-bottom: 10px;
+}
+
+.service_post_item p{
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--black);
+}
+
+#termsOfCost{
+    padding: 70px 0px;
+}
+
+#termsOfCost .card{
+    border: none;
+    border-radius: 10px;
+}
+
+#termsOfCost .card .card-body{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#termsOfCost .card .card-body p{
+    margin-bottom: 0;
+}
+
+.text-primary{
+    color: var(--primary-color)!important;
+}
+
+.card h4{
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.discount__wrap{
+    background: #F3F3F3;
+    padding: 20px 15px;
+}
+.discount__wrap{
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+.discount__wrap span{
+    font-size: 18px;
+    color: var(--black);
+}
+
+.discount__wrap span.old_price{
+    text-decoration: line-through;
+}
+
+.discount__wrap span.current_price{
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.discount__wrap span.current_price small{
+    font-size: 15px;
+}
+
+.big_image_card{
+    margin-bottom: 30px;
+}
+
+.big_image_card .big_card_img img{
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.big_image_card h3{
+    font-size: 20px;
+    color: var(--black);
+    font-weight: 700;
+}
+
+.big_image_card p{
+    font-size: 16px;
+    color: var(--black);
+}
+.review_card{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.review_card{
+    background: #fff;
+    padding: 30px 25px;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.review_card h4{
+    width: 80%;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.review_card p{
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--black);
+}
+
+.review_card .review_user .star{
+    color: #FFC566;
+    margin-bottom: 5px;
+}
+.nav-toggle-btn{
+    display: none;
+    width: 40px;
+    height: 40px;
+    border: none;
+    font-size: 20px;
+    background: var(--white);
+    color: var(--primary-color);
+    border-radius: 5px;
+}
+/* Responsive Area */
+
+@media only screen and (max-width:1700px) {
+    .main-navbar .nav-link{
+        padding: 20px 20px;
+    }
+    #page_title {
+        padding: 50px 0px;
+        padding-top: 130px;
+    }
+    #page_title h1{
+        font-size: 35px;
+    }
+    #hero{
+        padding: 150px 0px;
+        padding-top: 210px;
+    }
+    .section_title_wrap h4{
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+    #association {
+        padding: 80px 0px;
+    }
+    #hero h4{
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+    #hero h1{
+        font-size: 40px;
+    }
+    .section_title_wrap h2{
+        font-size: 28px;
+    }
+    a,p,
+    .section_title_wrap p{
+        font-size: 16px;
+    }
+    .card h4 ,
+    .role__item .role_top h4,
+    .asso_item h3{
+        font-size: 20px;
+    }
+    .card__associations{
+        padding: 30px 40px;
+    }
+    .role__item{
+        padding: 20px;
+    }
+    .service_post_item h3 {
+        font-size: 18px;
+    }
+    .service_post_item p{
+        margin-bottom: 0px;
+    }
+}
+
+@media only screen and (max-width:1440px) {
+    #hero {
+        padding: 100px 0px;
+        padding-top: 160px;
+    }
+    #hero h4{
+        font-size: 22px;
+    }
+    #hero h1 {
+        font-size: 35px;
+    }
+    #services__text__page__wrap,
+    #termsOfCost,
+    #role_of_association,
+    #establishment,
+    #association {
+        padding: 60px 0px;
+    }
+    .section_title_wrap h4{
+        font-size: 18px;
+    }
+    .navbar-nav .nav-link{
+        font-size: 16px;
+    }
+    .section_title_wrap h2 {
+        font-size: 26px;
+    }
+    .review_card h4,
+    .big_image_card h3,
+    .card h4, .role__item .role_top h4, .asso_item h3 {
+        font-size: 18px;
+    }
+    .review_card p,
+    .big_image_card p,
+    a, p, .section_title_wrap p {
+        font-size: 14px;
+    }
+    .review_user h5{
+        font-size: 16px;
+    }
+    #page_title h1 {
+        font-size: 28px;
+    }
+    #page_title {
+        padding: 50px 0px;
+        padding-top: 120px;
+    }
+    .serv_sec_title{
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+    .service_post_item h3 {
+        font-size: 16px;
+    }
+    .service_post_item p{
+        font-size: 14px;
+    }
+    .section_title_wrap {
+        margin-bottom: 30px;
+    }
+    .discount__wrap{
+        padding: 10px;
+    }
+    .discount__wrap span {
+        font-size: 16px;
+    }
+    .discount__wrap span.current_price{
+        font-size: 24px;
+    }
+}
+
+@media only screen and (max-width:992px) {
+    .nav-toggle-btn{
+        display: block;
+    }
+    #hero {
+        padding: 80px 0px;
+        padding-top: 140px;
+    }
+    .main-navbar{
+        padding: 10px 0px;
+    }
+    #services__text__page__wrap, #termsOfCost, #role_of_association, #establishment, #association {
+        padding: 50px 0px;
+    }
+    .section_title_wrap h4 {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+    .section_title_wrap h2 {
+        font-size: 22px;
+    }
+    .asso_item > img{
+        margin-bottom: 10px!important;
+    }
+    .serv_sec_title,
+    .review_card h4, .big_image_card h3, .card h4, .role__item .role_top h4, .asso_item h3 {
+        font-size: 16px;
+    }
+    .card__associations {
+        padding: 15px 6px;
+    }
+    .footer__item__wrap{
+        font-size: 16px;
+        gap: 10px;
+    }
+    #page_title {
+        padding: 40px 0px;
+        padding-top: 100px;
+    }
+    .offcanvas-title img{
+        width: 200px;
+    }
+    .offcanvas-body .nav-item .nav-link{
+        padding: 5px 10px;
+    }
+    .offcanvas-body .nav-item .nav-link.active{
+        font-weight: bold;
+        color: var(--primary-color);
+    }
+}
+
+
+@media only screen and (max-width:550px) {
+    #hero{
+        background: linear-gradient(#0000009d, #0000009d),url(./../images/hero-banner-bg-phone.png);
+        padding: 250px 0px;
+        padding-top: 100px;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    #hero h4 {
+        font-size: 16px;
+    }
+    #hero h1 {
+        font-size: 28px;
+    }
+    #services__text__page__wrap, #termsOfCost, #role_of_association, #establishment, #association {
+        padding: 40px 0px;
+    }
+    .section_title_wrap h4{
+        margin-bottom: 5px;
+    }
+    .section_title_wrap h2{
+        font-size: 18px;
+    }
+    .section_title_wrap h2 br{
+        display: none;
+    }
+    .section_title_wrap h2{
+        margin-bottom: 10px;
+    }
+    .review_card p, .big_image_card p, a, p, .section_title_wrap p{
+        font-size: 14px;
+    }
+    .review_card p br, .big_image_card p br, .section_title_wrap p br{
+        display: none;
+    }
+    .asso_item{
+        margin-bottom: 15px;
+    }
+    #core_value img, #establishment img{
+        margin-bottom: 15px;
+    }
+    .card__associations .card-body,
+    .card__associations{
+        background: none;
+        border:none;
+        padding: 0px;
+    }
+    .footer__item__wrap{
+        gap: 4px;
+        margin-bottom: 15px;
+    }
+    .discount__wrap span.current_price {
+        font-size: 20px;
+    }
+    .discount__wrap span {
+        font-size: 14px;
+    }
+
+    .serv_sec_title span:last-child {
+        display: flex;
+        flex-direction: column;
+    }
+    #termsOfCost .col-12.mb-5{
+        margin-bottom: 15px!important;
+    }
+    .review_card{
+        padding: 20px 20px;
+    }
+    
+}
