@@ -401,15 +401,7 @@
             document.querySelector("#signinBtn").click();
         }
 
-        function handleDemoClick() {
-            autoLogin();
-        }
 
-        function showLogin() {
-            var content_element = document.querySelector(".content");
-            content_element.classList.remove('index');
-            content_element.classList.add('signin');
-        }
     </script>
     {% endif %}
     {% if user['auth'] %}
