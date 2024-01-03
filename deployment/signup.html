@@ -1,4 +1,16 @@
-<section id="box_log_up">
+<section id="page_title">
+  <div class="container">
+      <div class="row">
+          <div class="col-12">
+              <h1 class="text-center">
+                회원가입
+              </h1>
+          </div>
+      </div>
+  </div>
+</section>
+
+<section id="box_log_up" class="my-5">
   <div class="container">
      <div class="row">
           <div class="col-md-2">
@@ -7,9 +19,7 @@
               <div class="card card-v2">
                   <div class="card-body">
                       <div class="form_control_box">
-                          <h2 class="form-title text-center mb-2">
-                            회원가입
-                          </h2>
+                         
                           <form {% if site['rtl'] %}class="rtl-form"{% endif %} action="" method="post">
                             {% if error %}
                               <div class="alert alert-dismissible alert-danger fade show">

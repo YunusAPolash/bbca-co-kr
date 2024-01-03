@@ -1,4 +1,15 @@
 {% if error%}
+<section id="page_title">
+  <div class="container">
+      <div class="row">
+          <div class="col-12">
+              <h1 class="text-center">
+                로그인
+              </h1>
+          </div>
+      </div>
+  </div>
+</section>
 <section class="signin" id="box_log_up">
     <div class="container">
        <div class="row">
@@ -8,9 +19,6 @@
                 <div class="card card-v2">
                     <div class="card-body">
                         <div class="form_control_box">
-                            <h2 class="form-title text-center mb-2">
-                                로그인
-                            </h2>
                             <form {% if site['rtl'] %}class="rtl-form"{% endif %} method="post" action="{{ page['url'] }}">
                                 {% if error %}
                                     <div class="alert alert-dismissible alert-danger fade show">
@@ -74,10 +82,13 @@
     <div class="row">
       <div class="col-lg-12 col-12">
         <h4 class="text-white">당신 곁에 항상 언제나</h4>
-        <h1 class="text-white">
+        <h1 class="text-white mb-2">
           융합기획커머스협회가 <br>
           함께하겠습니다!
         </h1>
+        <button class="btn btn-dark py-2 px-4" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+          로그인
+        </button>
       </div>
     </div>
   </div>
@@ -362,4 +373,14 @@
     </div>
   </div>
 </section>
+
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-body">
+         
+      </div>
+    </div>
+  </div>
+</div>
 {% endif %}
