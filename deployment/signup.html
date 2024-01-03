@@ -1,68 +1,356 @@
-<section id="page_title">
+<section id="hero">
   <div class="container">
-      <div class="row">
-          <div class="col-12">
-              <h1 class="text-center">
-                회원가입
-              </h1>
-          </div>
+    <div class="row">
+      <div class="col-lg-12 col-12">
+        <h4 class="text-white">당신 곁에 항상 언제나</h4>
+        <h1 class="text-white mb-2">
+          융합기획커머스협회가 <br>
+          함께하겠습니다!
+        </h1>
       </div>
+    </div>
   </div>
 </section>
 
-<section id="box_log_up" class="my-5">
+<section id="association">
   <div class="container">
-     <div class="row">
-          <div class="col-md-2">
-          </div>
-          <div class="col-md-8">
-              <div class="card card-v2">
-                  <div class="card-body">
-                      <div class="form_control_box">
-                         
-                          <form {% if site['rtl'] %}class="rtl-form"{% endif %} action="" method="post">
-                            {% if error %}
-                              <div class="alert alert-dismissible alert-danger fade show">
-                                {{ errorMessage }}
-                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                              </div>
-                            {% endif %}
-                            {% if success %}
-                              <div class="alert alert-success  alert-dismissible fade show" role="alert">
-                                {{successText}}
-                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                            </div>
-                            {% endif %}
-                            {% for field in fields %}
-                              <div class="form-group">
-                                <label for="{{ field.code }}" class="control-label">{{ lang(field.label) }}</label>
-                                <input type="{{ field.type }}" class="form-control" id="{{ field.code }}" value="{{ field.value }}" name="RegistrationForm[{{ field.code }}]">
-                              </div>
-                            {% endfor %}
-                            {% if site['captcha'] %}
-                              {{ captchaCode }}
-                            {% endif %}
-                            {% if check_agreement %}
-                              <div class="form-group">
-                                <div class="checkbox">
-                                  <label>
-                                    <input type="checkbox" class="terms-accept-checkbox" name="RegistrationForm[termsofservice]"> {{ lang('signup.accept_terms_text') }} <a href="{{ page_url('terms') }}" target="_blank">{{ lang('terms.signup_checkbox') }}</a>
-                                  </label>
-                                </div>
-                              </div>
-                            {% endif %}
-                  
-                            <input type="hidden" name="_csrf" value="{{csrftoken}}">
-                            <button type="submit" class="btn btn-primary v2 w-100">{{ lang('signup.button') }}</button>
-                            <div class="text-center mt-3">
-                              <span class="pull-right pull-right-middle">{{ lang('signup.text') }} <a href="{{ page_url('signin') }}">{{ lang('signin.title') }}</a></span>
-                            </div>
-                          </form>
-                      </div>
-                  </div>
-              </div>
-          </div>
-          <div class="col-md-2"></div>
-     </div>
+    <div class="row">
+      <div class="col-12">
+        <div class="section_title_wrap text-center">
+          <h4>Introduction to the Association</h4>
+          <h2>
+            융합기획커머스협회는 인플루언서와 비즈니스를 융합하여 <br>
+            협력과 발전을 도모합니다.
+          </h2>
+          <p>
+            융합기획커머스 협회는 인플루언서와 기업 간의 파트너십을 형성하고, <br>
+            상호 협력을 통해 양측의 이익을 극대화하는 데 초점을 맞추고 있습니다.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-3 col-md-3 col-6">
+        <div class="asso_item">
+          <img src="https://cdn.mypanel.link/jjc9qs/51ffmggo332o4mmu.webp" alt="" class="img-fluid mb-4">
+          <h3 class="text-center">
+            네트워킹 및 연결
+          </h3>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-3 col-6">
+        <div class="asso_item">
+          <img src="https://cdn.mypanel.link/jjc9qs/hilstn3ry84eyofz.webp" alt="" class="img-fluid mb-4">
+          <h3 class="text-center">
+            교육 및 훈련
+          </h3>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-3 col-6">
+        <div class="asso_item">
+          <img src="https://cdn.mypanel.link/jjc9qs/d1d7zscuswhkkq70.webp" alt="" class="img-fluid mb-4">
+          <h3 class="text-center">
+            리서치 및 인사이트 제공
+          </h3>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-3 col-6">
+        <div class="asso_item">
+          <img src="https://cdn.mypanel.link/jjc9qs/l4h3erkhse58sksa.webp" alt="" class="img-fluid mb-4">
+          <h3 class="text-center">
+            정책 및 규제 지원
+          </h3>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
+
+<section id="establishment">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 col-md-6 col-12">
+        <div class="establishment_image">
+          <img src="https://cdn.mypanel.link/jjc9qs/ytn55iysg17ro4po.webp" class="img-fluid" alt="">
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6 col-12">
+        <div class="section_title_wrap">
+          <h4>Purpose Of Establishment</h4>
+          <h2>
+            융합기획커머스협회는 <br>
+            전문적인 “융합기획전문가” 배출을 <br>
+            목표로 합니다.
+          </h2>
+          <p>
+            융합기획커머스협회는 불황과 레드오션에서도 잘 살아 남을 수 있는 “융합기획전문가” 들을 많이 배출하는 것을 목적으로 출범한 민간주도의 교육/컨설팅 전문
+            기관입니다.
+          </p>
+          <p>
+            회원사의 브랜드 경쟁력 강화를 위한 경영자 커뮤니티, 교육, 컨설팅, 부서장 연구회, 컨퍼런스, 시상제도, 신문 출판 등 다양한 활동으로 브랜딩을 통한 기업의
+            경쟁력 강화와 경제발전에 기여하고 있습니다.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="core_value">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 col-md-6 col-12">
+        <div class="section_title_wrap">
+          <h4>Core Value</h4>
+          <h2>
+            융합기획커머스협회는 <br>
+            인플루언스들에게 다양한 지원을 <br>
+            제공합니다.
+          </h2>
+          <p>
+            융합기획커머스협회는 인플루언서들이 자신의 퍼스널 브랜드를 효과적으로 구축하고 발전시킬 수 있도록 다양한 지원과 자원을 제공합니다.
+            이를 통해 인플루언서는 자신의 독특한 매력과 가치를 강조하며, 브랜드로서의 입지를 굳건히 할 수 있습니다
+          </p>
+          <p>
+            또한, 인플루언서들이 자신의 퍼스널 브랜딩을 통해 자기개발과 성장을 이루고, 사회적 영향력을 향상시키는 것입니다. 이를 통해 인플루언서들은 자신의 목표와
+            가치를 실현하며, 더 큰 영향력을 가진 브랜드로써의 지위를 확립할 수 있습니다.
+          </p>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6 col-12">
+        <div class="core-value-image">
+          <img src="https://cdn.mypanel.link/jjc9qs/014oyqf3mje0wtgw.webp" class="img-fluid" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="role_of_association">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="section_title_wrap text-center mb-5">
+          <h4 class="text-white">The Role Of An Association</h4>
+          <h2 class="text-white">
+            융합기획커머스협회는 다양한 지원을 통해 <br>
+            인플루언스들과 공존하는 세상을 만들어 갑니다
+          </h2>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <div class="card card__associations">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-lg-4 col-md-6 col-12">
+                <div class="role__item">
+                  <div class="role_top">
+                    <div class="icon">
+                      <img src="https://cdn.mypanel.link/jjc9qs/ezfj7jb6ofcozfj7.png" class="img-fluid" alt="">
+                    </div>
+                    <h4 class="mb-0">전문적인 분석과 평가</h4>
+                  </div>
+                  <p>
+                    융합기획커머스협회는 전문가들로 구성된 팀을 통해 고객의 인스타그램 계정을 전반적으로 분석하고 평가합니다. 이를 통해 고객은 자신의
+                    계정의 강점과 약점을 파악할 수 있습니다.
+                  </p>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6 col-12">
+                <div class="role__item">
+                  <div class="role_top">
+                    <div class="icon">
+                      <img src="https://cdn.mypanel.link/jjc9qs/fya5nd9c32snmmul.png" class="img-fluid" alt="">
+                    </div>
+                    <h4 class="mb-0">퍼스널 브랜딩 개선</h4>
+                  </div>
+                  <p>
+                    융합기획커머스협회는 퍼스널 브랜딩에 대한 전문적인 조언과 가이드라인을 제공합니다.
+                    고객은 자신의 인스타그램 계정을 효과적으로 브랜딩하고 자신만의 독특한 매력을 강조할 수 있습니다.
+                  </p>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6 col-12">
+                <div class="role__item">
+                  <div class="role_top">
+                    <div class="icon">
+                      <img src="https://cdn.mypanel.link/jjc9qs/zxujsen9b6fwoh7y.png" class="img-fluid" alt="">
+                    </div>
+                    <h4 class="mb-0">타깃 오디언스 분석과 전략</h4>
+                  </div>
+                  <p>
+                    융합기획커머스협회는 고객의 타깃 오디언스를 분석하고, 그에 맞는 전략을 제시합니다. 이를 통해 고객은 자신의 계정을 특정 타깃
+                    그룹에 맞추어 최적화할 수 있습니다.
+                  </p>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6 col-12">
+                <div class="role__item">
+                  <div class="role_top">
+                    <div class="icon">
+                      <img src="https://cdn.mypanel.link/jjc9qs/u7628telbh06xxwq.png" class="img-fluid" alt="">
+                    </div>
+                    <h4 class="mb-0">콘텐츠 아이디어와 제작 지원</h4>
+                  </div>
+                  <p>
+                    융합기획커머스협회는 다양한 콘텐츠 아이디어를 제공하고, 콘텐츠 제작에 대한 지원을 합니다. 이를 통해 고객은 다양하고 창의적인
+                    콘텐츠를 제작하여 팔로워들의 관심과 참여를 유도할 수 있습니다.
+                  </p>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6 col-12">
+                <div class="role__item">
+                  <div class="role_top">
+                    <div class="icon">
+                      <img src="https://cdn.mypanel.link/jjc9qs/nfqhzcslo0gf13x5.png" class="img-fluid" alt="">
+                    </div>
+                    <h4 class="mb-0">컨텐츠 최적화와 편집</h4>
+                  </div>
+                  <p>
+                    융합기획커머스협회는고객의 콘텐츠를 최적화하고 편집하는데 도움을 줍니다. 이를 통해 고객은 더욱 잘 구성된 콘텐츠를 제공하고
+                    시각적인 매력을 높일 수 있습니다.
+                  </p>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6 col-12">
+                <div class="role__item">
+                  <div class="role_top">
+                    <div class="icon">
+                      <img src="https://cdn.mypanel.link/jjc9qs/fyklaqmjr2ldurip.png" class="img-fluid" alt="">
+                    </div>
+                    <h4 class="mb-0">해시태그 및 키워드 최적화</h4>
+                  </div>
+                  <p>
+                    융합기획커머스협회는 고객의 해시태그 및 키워드 사용을 최적화하는 방법을 제시합니다. 이를 통해 고객은 더 많은 사람들에게 노출되고
+                    검색 결과에서 상위에 노출될 수 있습니다.
+                  </p>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6 col-12">
+                <div class="role__item">
+                  <div class="role_top">
+                    <div class="icon">
+                      <img src="https://cdn.mypanel.link/jjc9qs/ml97siom91k0bawt.png" class="img-fluid" alt="">
+                    </div>
+                    <h4 class="mb-0">커뮤니티 관리와 참여 유도</h4>
+                  </div>
+                  <p>
+                    융합기획커머스협회는 고객이 구성한 커뮤니티를 효과적으로 관리하고 참여를 유도하는 방법을 제시합니다. 이를 통해 고객은 팔로워들과의
+                    상호작용을 증진시키고 효과적인 커뮤니티 운영을 할 수 있습니다.
+                  </p>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6 col-12">
+                <div class="role__item">
+                  <div class="role_top">
+                    <div class="icon">
+                      <img src="https://cdn.mypanel.link/jjc9qs/1jydn0l3lda1r6rq.png" class="img-fluid" alt="">
+                    </div>
+                    <h4 class="mb-0">인플루언서 네트워킹 기회</h4>
+                  </div>
+                  <p>
+                    융합기획커머스협회는 다른 인플루언서들과의 네트워킹 기회를 제공합니다. 이를 통해 고객은 다른 인플루언서들과의 교류와 협력을 통해
+                    새로운 아이디어와 비즈니스 기회를 얻을 수 있습니다.
+                  </p>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6 col-12">
+                <div class="role__item">
+                  <div class="role_top">
+                    <div class="icon">
+                      <img src="https://cdn.mypanel.link/jjc9qs/f8miyn15jxxa2na2.png" class="img-fluid" alt="">
+                    </div>
+                    <h4 class="mb-0">협회 주최 및 워크숍 참여</h4>
+                  </div>
+                  <p>
+                    융합기획커머스협회는 다양한 이벤트 및 워크숍을 주최합니다. 고객은 이를 통해 다른 인플루언서들과의 교류와 지식 공유를 할 수
+                    있으며, 전문가들로부터 학습과 영감을 얻을 수 있습니다.
+                  </p>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6 col-12">
+                <div class="role__item">
+                  <div class="role_top">
+                    <div class="icon">
+                      <img src="https://cdn.mypanel.link/jjc9qs/sotn1mqkcnbcjces.png" class="img-fluid" alt="">
+                    </div>
+                    <h4 class="mb-0">비즈니스 기회 제공</h4>
+                  </div>
+                  <p>
+                    융합기획커머스협회는 다양한 비즈니스 기회를 제공합니다. 이를 통해 고객은 브랜드와의 협업 기회를 얻을 수 있으며, 수익 창출을
+                    위한 다양한 방안을 모색할 수 있습니다.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+  aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content">
+      <button type="button" class="btn-close btn-modal-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      <div class="signin___modal">
+        <div class="left__signin">
+          <img src="https://cdn.mypanel.link/jjc9qs/n2dz4sdgp8pq3swq.webp" class="img-fluid" alt="">
+        </div>
+        <div class="right__signin">
+          <form {% if site['rtl'] %}class="rtl-form"{% endif %} action="" method="post">
+            <h3>회원가입</h3>
+            <hr>
+            {% if error %}
+              <div class="alert alert-dismissible alert-danger fade show">
+                {{ errorMessage }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+            {% endif %}
+            {% if success %}
+              <div class="alert alert-success  alert-dismissible fade show" role="alert">
+                {{successText}}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            {% endif %}
+            {% for field in fields %}
+              <div class="form-group">
+                <label for="{{ field.code }}" class="control-label">{{ lang(field.label) }}</label>
+                <input type="{{ field.type }}" class="form-control" id="{{ field.code }}" value="{{ field.value }}" name="RegistrationForm[{{ field.code }}]">
+              </div>
+            {% endfor %}
+            {% if site['captcha'] %}
+              {{ captchaCode }}
+            {% endif %}
+            {% if check_agreement %}
+              <div class="form-group">
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" class="terms-accept-checkbox" name="RegistrationForm[termsofservice]"> {{ lang('signup.accept_terms_text') }} <a href="{{ page_url('terms') }}" target="_blank">{{ lang('terms.signup_checkbox') }}</a>
+                  </label>
+                </div>
+              </div>
+            {% endif %}
+  
+            <input type="hidden" name="_csrf" value="{{csrftoken}}">
+            <button type="submit" class="btn btn-primary v2 w-100">{{ lang('signup.button') }}</button>
+            <div class="text-center mt-3">
+              <span class="pull-right pull-right-middle">{{ lang('signup.text') }} <a href="{{ page_url('signin') }}">{{ lang('signin.title') }}</a></span>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+   window.onload = () => {
+      const myModal = new bootstrap.Modal('#staticBackdrop');
+      myModal.show();
+  }
+</script>

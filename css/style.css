@@ -261,6 +261,39 @@ select.form-control{
 	appearance: none;
     background: url(https://assets.helptheall.com/img/ico_select_box.svg) 98% center / 8px no-repeat;
 }
+.modal-dialog {
+    width: 900px;
+    max-width: 900px;
+}
+.modal-content{
+	background: transparent;
+	border: none;
+}
+.signin___modal {
+    display: grid;
+	grid-template-columns: 2.5fr 3fr;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+
+.signin___modal .left__signin img{
+	height: 100%;
+	object-fit: cover;
+}
+.signin___modal .right__signin{
+	background: #fff;
+    padding: 30px 30px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 1fr;
+}
+.btn-close.btn-modal-close {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+}
 
 /*
 Login Page

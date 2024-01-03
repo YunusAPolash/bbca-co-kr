@@ -38,35 +38,7 @@
         <div class="">
           <div class="card card-v2">
             <div class="card-body">
-              <h2 class="form-title text-center mb-2">
-                <i class="navbar-icon far fa-credit-card"></i> 잔액 충전
-            </h2>
-            <br> <br>
-              <form name="form">
-                <input type="hidden" name="username" value="{{user['username']}}">
-                <input type="hidden" name="amount" value="0">
-                
-                <label class="form-label" style="color:#333;">충전금액</label>
-                <p class="card-text" id="amount"style="color: #73778b;padding-bottom:10px;padding-top:10px;border-bottom: 1px solid #ff9800;">충전 금액을 선택해주세요.</p>
-                <button type="button" class="btn-close" style="transform: translateY(-180%);float:right;" onclick="AmountReset();">
-                </button>
-                
-                <button type="button" class="btn btn-light" onclick="AmountAdd(5500);"style="border: 1px solid #ddd;">+ 5천원</button>
-                <button type="button" class="btn btn-light" onclick="AmountAdd(11000);"style="border: 1px solid #ddd;">+ 1만원</button>
-                <button type="button" class="btn btn-light" onclick="AmountAdd(55000);"style="border: 1px solid #ddd;">+ 5만원</button>
-                <button type="button" class="btn btn-light" onclick="AmountAdd(110000);"style="border: 1px solid #ddd;">+ 10만원</button>
-                <button type="button" class="btn btn-light" onclick="AmountAdd(550000);"style="border: 1px solid #ddd;">+ 50만원</button>
-                <button type="button" class="btn btn-light" onclick="AmountAdd(1100000);"style="border: 1px solid #ddd;">+ 100만원</button>
-  
-                <div class="form-group">
-                  <label class="form-label" style="color:#333;padding-top:10px;">입금자명</label>
-                  <input type="text" class="form-control" name="name" placeholder="입금자명을 입력해주세요.">
-                </div>
-                
-                <button type="submit" class="btn btn-primary v2 w-100" onclick="PayPopUp();">충전하기</button>
-                
-              </form>
-              {{ addfunds }}
+              
             </div>
           </div>
         </div>
@@ -76,32 +48,7 @@
   
   </div>
  </div>
-    
-    <script>
-    function AmountAdd(amount){
-        var total_amount = amount + Number($('input[name=amount]').val());
-        var vat_amount = (total_amount/1.1)*0.1;
-    
-        var amount_message = total_amount.toLocaleString('ko-KR')+"원 (부가세 : "+ 				vat_amount.toLocaleString('ko-KR') +"원)"
-        $('input[name=amount]').val(total_amount);
-        $("#amount").text(amount_message);
-    
-     }
-    
-    function AmountReset(){
-        $('input[name=amount]').val(0);
-        $("#amount").text("충전 금액을 선택해주세요.");
-     }
-    function PayPopUp() {
-          window.open("", "payment", "toolbar=no,directories=no,scrollbars=no,resizable=no,status=no,menubar=no,width=470, height=600, top=100,left=100" );
-    
-          form.target="payment";
-          form.action="https://lasstudio.gabia.io/orders/payment";
-          form.method = "post";
-    
-          form.submit( );
-        }
-    </script>
+ 
     
     {% if paymentList %}
       <div class="container">
