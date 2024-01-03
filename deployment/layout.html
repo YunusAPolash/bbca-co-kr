@@ -39,7 +39,118 @@
 <body {% if not user['auth'] %} class="noAuthBody" {% endif %}>
 
     {% if user['auth'] %}
+    <header class="sticky-top">
+        <nav class="navbar navbar-expand-lg auth-navbar">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/">
+                    <div class="site__logo">
+                        <img src="https://cdn.mypanel.link/jjc9qs/z4s13ol52a941w6j.png" alt="">
+                    </div>
+                </a>
+                <button type="button" class="nav-toggle-btn" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        {% for menu in site['menu'] %}
+                        {% if menu['link'] == '~' %}
+                        {% if page['url'] == '/' %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="javascript:void(0)" data-bs-toggle="modal"
+                                data-bs-target="#staticBackdrop">
+                                {{ menu['name'] }}
+                            </a>
+                        </li>
+                        {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="/#signin">
+                                {{ menu['name'] }}
+                            </a>
+                        </li>
+                        {% endif %}
+                        {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link {% if menu['active'] %}active{% endif %}" href="{{ menu['link'] }}" {% if
+                                menu['external'] %} target="_blank" {% endif %}>{{
+                                menu['name'] }}</a>
+                        </li>
+                        {% endif %}
+                        {% endfor %}
+                    </ul>
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        {% for menu in site['account_menu'] %}
+                        {% if not menu['link'] %}
+                        {% if site.currencies %}
 
+                        {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link">{{ menu['name'] }}</a>
+                        </li>
+                        {% endif %}
+                        {% else %}
+                        <li class="nav-item">
+                            <a href="{{ menu['link'] }}" class="nav-link {% if menu['active'] %} active{% endif %}" {%
+                                if menu['external'] %} target="_blank" {% endif %}>{{ menu['name'] }}</a>
+                        </li>
+                        {% endif %}
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="offcanvas offcanvas-start authed" tabindex="-1" id="offcanvasExample"
+            aria-labelledby="offcanvasExampleLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasExampleLabel">
+                    <img src="https://cdn.mypanel.link/jjc9qs/z4s13ol52a941w6j.png" class="img-fluid" alt="">
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <div class="account_preference">
+                    <h3>{{ user['username'] }}</h3>
+                    <h5>{{ user['balance_formatted'] }}</h5>
+                </div>
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                    {% for menu in site['menu'] %}
+                    {% if menu['link'] == '~' %}
+                    {% if page['url'] == '/' %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="javascript:void(0)" data-bs-toggle="modal"
+                            data-bs-target="#staticBackdrop">
+                            {{ menu['name'] }}
+                        </a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="/#signin">
+                            {{ menu['name'] }}
+                        </a>
+                    </li>
+                    {% endif %}
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link {% if menu['active'] %}active{% endif %}" href="{{ menu['link'] }}" {% if
+                            menu['external'] %} target="_blank" {% endif %}>{{
+                            menu['name'] }}</a>
+                    </li>
+                    {% endif %}
+                    {% endfor %}
+                    <li class="nav-item">
+                        <a href="/account" class="nav-link {% if menu['active'] %} active{% endif %}">마이페이지</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="/logout" class="nav-link {% if menu['active'] %} active{% endif %}">로그아웃</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </header>
     {% else %}
     <header class="fixed-top">
         <nav class="navbar navbar-expand-lg main-navbar">
@@ -129,96 +240,8 @@
 
     {% if user['auth'] %}
     <main class="authMain" id="mainAuth">
-        <div class="sidebar_premium d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" id="sidebar">
-            <button onclick="toggleSidebar()" class="closeSidebar">
-                <i class="fas fa-times"></i>
-            </button>
-            <a href="{{ page_url('index') }}"
-                class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-                {% if site['logo'] %}
-                <img src="{{ site['logo'] }}" alt="{{ site['name'] }}" width="200px" title="{{ site['name'] }}">
-                {% else %}
-                {{ site['name'] }}
-                {% endif %}
-            </a>
-            <div class="user_box">
-                <div class="avatar">
-                    <img src="https://cdn.mypanel.link/e2mfjj/milr6pncqx4ds3h6.png" class="user_avatar" alt="">
-                </div>
-                <h4 class="user-name">{{user['username']}}</h4>
-                <span class="userbalance">
-                    {{user['balance_formatted']}}
-                </span>
-            </div>
-            <ul class="nav nav-pills flex-column mb-auto">
-                {% for menu in site['menu'] %}
-                <li class="nav-item">
-                    <a href="{{ menu['link'] }}"
-                        class="nav-link d-flex gap-2 align-items-center {% if menu['active'] %} active{% endif %}">
-                        {% if menu['icon'] %}
-                        <i class="{{ menu['icon'] }}"></i>
-                        {% endif %}
-                        <span>{{ menu['name'] }}</span>
-                    </a>
-                </li>
-                {% endfor %}
-            </ul>
-        </div>
-        <div class="content">
-            <div class="top_bar d-flex justify-content-between align-items-center">
-
-                <div>
-                    <button class="sidebarNavBtn" onclick="toggleSidebar()">
-                        <i class="fas fa-bars"></i>
-                    </button>
-                </div>
-                <div class="logo">
-                    <img src="https://cdn.mypanel.link/e2mfjj/5krltr2cm1n37d25.png" class="img-fluid img_logo_top_nav"
-                        alt="">
-                </div>
-                <div>
-                    <a href="http://pf.kakao.com/_kPixeb/chat" target="_blank" class="user_nav_items"><i
-                            class="fas fa-comment-dots"></i></a>
-                    <a href="/addfunds" class="user_nav_items"><i class="fas fa-won-sign"></i></a>
-                    <a href="/account" class="user_nav_items"><i class="fas fa-user"></i></a>
-                    <a href="/logout" class="user_nav_items"><i class="fas fa-power-off"></i></a>
-                </div>
-
-            </div>
-            <div class="all_content">
-                <!-- CONTENT -->
-                {{ content }}
-            </div>
-            <!-- Footer -->
-            <footer>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-3 col-md-3 col-12">
-                            <div class="footer_logo d-flex align-items-center h-100">
-                                <img src="{{site['logo']}}" alt="" width="200" class="logo">
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-12">
-                            <p class="text-white">
-                                회사명 : SNS 시그널 | 송선한<br>
-                                주소: 대구 수성구 시지로 70, 202호(시지동, 태양힐즈) <br>
-
-                                사업자등록번호 : 489-35-01067 <br><br>
-                                Copyright {{site['name']}} All rights reserved
-                            </p>
-
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-12">
-                            <div class="foo_link d-flex align-items-center h-100">
-                                <a href="javascript:void(0)" data-bs-toggle="modal"
-                                    data-bs-target="#termsModal">이용약관</a> | <a href="javascript:void(0)"
-                                    data-bs-toggle="modal" data-bs-target="#privacyModal">개인정보취급방침</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </footer>
-        </div>
+        <!-- CONTENT -->
+        {{ content }}
     </main>
 
     {% else %}
@@ -230,9 +253,7 @@
 
     {{ site['custom_footer'] }}
 
-    {% if user['auth'] %}
 
-    {% else %}
     <footer>
         <div class="container">
             <div class="row">
@@ -288,7 +309,6 @@
             </div>
         </div>
     </footer>
-    {% endif %}
 
     <style>
         .integration-fixed__bottom-right {

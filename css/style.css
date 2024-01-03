@@ -1,7 +1,7 @@
 
 /*
  ************************* ALL RIGHT RESERVED BY FEXPINK LTD ***********************************
-Theme : SNSSIGNAL - COM
+Theme : bbca.co.kr - Theme
 Designer : Yunus
 Crafted by: Yunus
 Email: real.freelanceryunus@gmail.com
@@ -90,7 +90,7 @@ h1,h2,h3,h4,h5,h6{
     width: 200px;
 }
 .card-v2{
-	border: 1px solid var(--black-color);
+	border: 1px solid #d8d8d8;
 	border-radius: 20px;
 }
 .card-v2 .card-body{
@@ -493,13 +493,18 @@ Login Page
 .qna_accordion .accordion-item:last-child {
     border-bottom: 1px solid rgb(131, 131, 131);
 }
+.nav-item .badge{
+	padding: 0px;
+	font-size: 16px;
+	color: var(--black);
+}
 /*
 ===========================
    RESPONSIVE AREA
 ===========================
 */
 
-@media screen and (max-width: 991px){
+@media only screen and (max-width: 991px){
 	.authHeader .navbar{
 		padding: 10px 0px;
 	}
@@ -840,6 +845,12 @@ Login Page
 
 @media screen and (max-width: 550px) {
 	/* Hiding from phone  */
+	.signin___modal{
+		grid-template-columns: 1fr;
+	}
+	.signin___modal .left__signin{
+		display: none;
+	}
 	#services_ph,
 	#features_ph{
 		display: block;
@@ -1362,6 +1373,44 @@ footer{
     color: var(--white);
     border-radius: 5px;
 }
+.auth-navbar .nav-toggle-btn{
+	color: var(--black-color);
+}
+.auth-navbar {
+    background: #fff;
+    padding: 15px 0px;
+}
+.auth-navbar .navbar-expand-lg .navbar-nav .nav-link{
+	color: var(--black);
+}
+.auth-navbar .navbar-nav .nav-link.active{
+	color: var(--nav-active-bg);
+	font-weight: 700;
+}
+
+.account_preference {
+    padding-bottom: 20px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.account_preference h3{
+	font-size: 20px;
+	font-weight: 700;
+}
+
+.account_preference h5{
+	color: var(--nav-active-bg);
+	font-weight: bold;
+	font-size: 16px;
+	margin-bottom: 0px;
+}
+
+.authed .offcanvas-body .nav-item .nav-link.active{
+	color: var(--white);
+	background: var(--primary-color);
+}
+
 /* Responsive Area */
 
 @media only screen and (max-width:1700px) {

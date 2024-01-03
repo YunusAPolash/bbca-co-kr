@@ -1,36 +1,37 @@
 <style>
-    .btn-close {
-        box-sizing: content-box;
-        width: 1em;
-        height: 1em;
-        padding: .25em .25em;
-        color: #000;
-        background: transparent url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z'/%3e%3c/svg%3e") center/1em auto no-repeat;
-        border: 0;
-        border-radius: .375rem;
-        opacity: .5
-    }
-    
-    .btn-close:hover {
-        color: #000;
-        text-decoration: none;
-        opacity: .75
-    }
-    
-    .btn-close.disabled,.btn-close:disabled {
-        pointer-events: none;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
-        opacity: .25
-    }
-    
-    .btn-close-white {
-        filter: invert(1) grayscale(100%) brightness(200%)
-    }
-    </style>
-    
- <div class="py-5">
+  .btn-close {
+    box-sizing: content-box;
+    width: 1em;
+    height: 1em;
+    padding: .25em .25em;
+    color: #000;
+    background: transparent url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z'/%3e%3c/svg%3e") center/1em auto no-repeat;
+    border: 0;
+    border-radius: .375rem;
+    opacity: .5
+  }
+
+  .btn-close:hover {
+    color: #000;
+    text-decoration: none;
+    opacity: .75
+  }
+
+  .btn-close.disabled,
+  .btn-close:disabled {
+    pointer-events: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    opacity: .25
+  }
+
+  .btn-close-white {
+    filter: invert(1) grayscale(100%) brightness(200%)
+  }
+</style>
+
+<div class="py-5">
   <div class="container">
     <div class="row">
       <div class="col-md-2"></div>
@@ -38,93 +39,121 @@
         <div class="">
           <div class="card card-v2">
             <div class="card-body">
-              
+              <h2 class="fs-3 fw-bold text-center mb-3">충전시 유의사항</h2>
+              <div class="addfund_box mb-4">
+                <ul>
+                  <li>
+                    예금주 : XXXXX<br>
+                    은행명 : XXXX <br>
+                    계좌번호 : XXXXXXXXX
+                  </li>
+                  <li>
+                    현재 무통장 입금 결제만 가능합니다 <br>
+                    (카드 결제 준비중) <br>
+                    (부가세 10프로 포함 입금하셔야합니다
+                    ex.1만원충전시 11,000원 입금) <br>
+                    (❗️충전하신 포인트는 환불이 불가합니다.)
+                  </li>
+                  <li>
+                    입금 후 카카오톡 플러스친구로 문의바랍니다. <br>
+                    (입금자 명과 금액을 정확히 입력해주세요)
+                  </li>
+                  <li>
+                    * 최초 1회 테스트시 5,000원 충전이 가능하며,
+                    이후 10,000원 단위로 충전해 주세요. <br>
+                    * 세금계산서발행은 매월10일 일괄적으로 됩니다. <br>
+                    발행요청은 매월 10일날 카카오채널로 요청부탁드립니다.
+                  </li>
+                </ul>
+              </div>
+              <a class="btn btn-primary v2 w-100" href="">문의사항은 편하게 채널로 1:1문의 주세요</a>
             </div>
           </div>
         </div>
       </div>
       <div class="col-md-2"></div>
     </div>
-  
+
   </div>
- </div>
- 
-    
-    {% if paymentList %}
-      <div class="container">
-        <div class="row">
-          <div class="col-md-8 col-md-offset-2">
-            <div class="well">
-              <table class="table">
-                <thead>
-                <tr>
-                  <th>{{ lang('addfunds.id') }}</th>
-                  <th>{{ lang('addfunds.date') }}</th>
-                  <th>{{ lang('addfunds.method') }}</th>
-                  <th>{{ lang('addfunds.amount') }}</th>
-                </tr>
-                </thead>
-                <tbody>
-                {% for payment in paymentList %}
-                  <tr>
-                    <td>{{ payment['id'] }}</td>
-                    <td><span class="nowrap">{{ payment['date'] }}</span></td>
-                    <td>{{ payment['method'] }}</td>
-                    <td>
-                      {% if payment['original_amount'] %}
-                        <span data-toggle="tooltip" data-placement="left" title="{{ payment['original_amount'] }}&nbsp;{{ payment['original_currency'] }}">≈ {{ payment['amount'] }}</span>
-                      {% else %}
-                        {{ payment['amount'] }}
-                      {% endif %}
-                    </td>
-                  </tr>
-                {% endfor %}
-                </tbody>
-              </table>
-            </div>
-            {% if pagination['count'] > 50 %}
-              <div class="nav-pills">
-                <ul class="pagination {% if site['rtl'] %} rtl-pagination {% endif %}">
-                  {% if pagination['current'] != 1 %}
-                    <li>
-                      <a href="{{ page['url'] }}/{{ pagination['last'] }}" aria-label="Previous">
-                        <span aria-hidden="true">&laquo;</span>
-                      </a>
-                    </li>
-                  {% endif %}
-    
-                  {% set r, l = 3, 3 %}
-    
-                  {% if pagination['current'] == 1 %}
-                    {% set r = 6 %}
-                  {% endif %}
-    
-                  {% if pagination['current'] == 2 %}
-                    {% set r = 5 %}
-                  {% endif %}
-    
-                  {% if pagination['current'] >= pagination['pages'] %}
-                    {% set l = 5 %}
-                  {% endif %}
-    
-                  {% for i in 1..ceil(pagination['pages']) %}
-                    {% if i >= (pagination['current']-l) and i <= (pagination['current']+r) %}
-                      <li{% if i == pagination['current'] %} class="active"{% endif %}><a href="{{ page['url'] }}/{{i}}">{{i}}</a></li>
-                    {% endif %}
-                  {% endfor %}
-    
-                  {% if pagination['current'] < pagination['pages'] %}
-                    <li>
-                      <a href="{{ page['url'] }}/{{ pagination['next'] }}" aria-label="Next">
-                        <span aria-hidden="true">&raquo;</span>
-                      </a>
-                    </li>
-                  {% endif %}
-                </ul>
-              </div>
-            {% endif %}
-          </div>
-        </div>
+</div>
+
+
+{% if paymentList %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <div class="well">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>{{ lang('addfunds.id') }}</th>
+              <th>{{ lang('addfunds.date') }}</th>
+              <th>{{ lang('addfunds.method') }}</th>
+              <th>{{ lang('addfunds.amount') }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for payment in paymentList %}
+            <tr>
+              <td>{{ payment['id'] }}</td>
+              <td><span class="nowrap">{{ payment['date'] }}</span></td>
+              <td>{{ payment['method'] }}</td>
+              <td>
+                {% if payment['original_amount'] %}
+                <span data-toggle="tooltip" data-placement="left"
+                  title="{{ payment['original_amount'] }}&nbsp;{{ payment['original_currency'] }}">≈ {{
+                  payment['amount'] }}</span>
+                {% else %}
+                {{ payment['amount'] }}
+                {% endif %}
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
       </div>
-    {% endif %}
+      {% if pagination['count'] > 50 %}
+      <div class="nav-pills">
+        <ul class="pagination {% if site['rtl'] %} rtl-pagination {% endif %}">
+          {% if pagination['current'] != 1 %}
+          <li>
+            <a href="{{ page['url'] }}/{{ pagination['last'] }}" aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+            </a>
+          </li>
+          {% endif %}
+
+          {% set r, l = 3, 3 %}
+
+          {% if pagination['current'] == 1 %}
+          {% set r = 6 %}
+          {% endif %}
+
+          {% if pagination['current'] == 2 %}
+          {% set r = 5 %}
+          {% endif %}
+
+          {% if pagination['current'] >= pagination['pages'] %}
+          {% set l = 5 %}
+          {% endif %}
+
+          {% for i in 1..ceil(pagination['pages']) %}
+          {% if i >= (pagination['current']-l) and i <= (pagination['current']+r) %} <li{% if i==pagination['current']
+            %} class="active" {% endif %}><a href="{{ page['url'] }}/{{i}}">{{i}}</a></li>
+            {% endif %}
+            {% endfor %}
+
+            {% if pagination['current'] < pagination['pages'] %} <li>
+              <a href="{{ page['url'] }}/{{ pagination['next'] }}" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+              </a>
+              </li>
+              {% endif %}
+        </ul>
+      </div>
+      {% endif %}
     </div>
+  </div>
+</div>
+{% endif %}
+</div>
