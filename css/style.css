@@ -1599,9 +1599,12 @@ footer{
 
 
 @media only screen and (max-width:550px) {
+	section{
+		overflow: hidden!important;
+	}
     #hero{
         background: linear-gradient(#0000009d, #0000009d),url(https://cdn.mypanel.link/jjc9qs/46shffks3q2b1tdy.webp);
-        padding: 250px 0px;
+        padding: 220px 0px;
         padding-top: 100px;
         background-repeat: no-repeat;
         background-size: cover;
@@ -1612,6 +1615,11 @@ footer{
     #hero h1 {
         font-size: 28px;
     }
+	#page_title{
+		background: linear-gradient(#0000009d, #0000009d),url(https://cdn.mypanel.link/jjc9qs/irnxpqjc0kxah64e.webp);
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
     #services__text__page__wrap, #termsOfCost, #role_of_association, #establishment, #association {
         padding: 40px 0px;
     }
