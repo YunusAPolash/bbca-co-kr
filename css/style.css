@@ -1516,11 +1516,17 @@ footer {
   line-height: 1;
 }
 
-.step_wraper h4{
+.step_wraper h4 {
   font-size: 18px;
   font-weight: 800;
   color: var(--primary-color);
   margin-bottom: 3px;
+}
+
+.gallery__wrap {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 70px;
 }
 
 /* Responsive Area */
@@ -1654,6 +1660,11 @@ footer {
   .discount__wrap span.current_price {
     font-size: 24px;
   }
+  .gallery__wrap {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+  }
 }
 
 @media only screen and (max-width: 992px) {
@@ -1718,6 +1729,11 @@ footer {
   }
   .contact__wraper .info__item {
     grid-template-columns: 2fr 5fr;
+  }
+  .gallery__wrap {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap:20px;
   }
 }
 
