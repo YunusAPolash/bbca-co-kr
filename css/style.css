@@ -1477,6 +1477,52 @@ footer {
   background: var(--primary-color);
   color: var(--white-color);
 }
+
+#process {
+  padding: 50px 0px;
+}
+.step_wraper {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.step_wraper .step_count {
+  background: url(https://cdn.mypanel.link/jjc9qs/sm3fwam0k46dczyh.png);
+  width: 150px;
+  height: 150px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.step_wraper .step_count .number {
+  font-size: 22px;
+  font-weight: 800;
+  margin-bottom: 0px;
+  line-height: 1;
+}
+
+.step_wraper .step_count .text {
+  font-size: 14px;
+  font-weight: normal;
+  margin-bottom: 0px;
+  line-height: 1;
+}
+
+.step_wraper h4{
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--primary-color);
+  margin-bottom: 3px;
+}
+
 /* Responsive Area */
 
 @media only screen and (max-width: 1700px) {
