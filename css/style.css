@@ -1078,7 +1078,7 @@ body {
 #hero {
   padding: 180px 0px;
   background: linear-gradient(#0000009d, #0000009d),
-    url(https://cdn.mypanel.link/jjc9qs/mjs685toy57gu0n5.webp);
+    url(https://cdn4.mypanel.link/jjc9qs/mjs685toy57gu0n5.webp);
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -1151,7 +1151,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background: linear-gradient(#00000040, #00000040),
-    url(https://cdn.mypanel.link/jjc9qs/glx1elc8pn7k93dd.webp),
+    url(https://cdn4.mypanel.link/jjc9qs/glx1elc8pn7k93dd.webp),
     linear-gradient(#fff, #fff);
 }
 
@@ -1211,7 +1211,7 @@ footer {
   padding: 70px 0px;
   padding-top: 130px;
   background: linear-gradient(#0000009d, #0000009d),
-    url(https://cdn.mypanel.link/jjc9qs/2duxji0ej060w37l.webp);
+    url(https://cdn4.mypanel.link/jjc9qs/2duxji0ej060w37l.webp);
 }
 
 #page_title h1 {
@@ -1496,7 +1496,7 @@ footer {
 }
 
 .step_wraper .step_count {
-  background: url(https://cdn.mypanel.link/jjc9qs/sm3fwam0k46dczyh.png);
+  background: url(https://cdn4.mypanel.link/jjc9qs/sm3fwam0k46dczyh.png);
   width: 150px;
   height: 150px;
   background-position: center;
@@ -1581,6 +1581,13 @@ footer {
 .contact-form .form-control{
   background-color: #dadada;
   border-radius: 0px;
+}
+
+.show_desktop{
+  display: block;
+}
+.show_phone{
+  display: none;
 }
 /* Responsive Area */
 
@@ -1796,7 +1803,7 @@ footer {
   }
   #hero {
     background: linear-gradient(#0000009d, #0000009d),
-      url(https://cdn.mypanel.link/jjc9qs/46shffks3q2b1tdy.webp);
+      url(https://cdn4.mypanel.link/jjc9qs/46shffks3q2b1tdy.webp);
     padding: 220px 0px;
     padding-top: 100px;
     background-repeat: no-repeat;
@@ -1810,7 +1817,7 @@ footer {
   }
   #page_title {
     background: linear-gradient(#0000009d, #0000009d),
-      url(https://cdn.mypanel.link/jjc9qs/irnxpqjc0kxah64e.webp);
+      url(https://cdn4.mypanel.link/jjc9qs/irnxpqjc0kxah64e.webp);
     background-repeat: no-repeat;
     background-size: cover;
   }
@@ -1898,5 +1905,11 @@ footer {
   .contact__wraper .info__item {
     grid-template-columns: 1fr;
     grid-gap: 5px;
+  }
+  .show_desktop{
+    display: none;
+  }
+  .show_phone{
+    display: block;
   }
 }
