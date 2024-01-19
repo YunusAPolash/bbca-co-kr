@@ -501,6 +501,42 @@ Login Page
   font-size: 16px;
   color: var(--black);
 }
+
+#team_wraper {
+  padding: 70px 0px;
+}
+
+.card.card_team {
+  border: none;
+  border-left: 2px solid #6f6f6f;
+  border-radius: 0;
+  box-shadow: 0 0 10px #ddd;
+}
+
+.card.card_team .card-body {
+  padding: 40px 20px;
+}
+
+.team_name h2 {
+  font-size: 24px;
+  color: var(--black);
+  font-weight: bold;
+}
+.team_name h2 small {
+  font-size: 16px;
+  color: #6f6f6f;
+}
+
+.team_name h2.name_en {
+  font-size: 22px;
+  font-weight: bold;
+  color: #6f6f6f;
+}
+
+.skills li {
+  font-size: 16px;
+  color: #6f6f6f;
+}
 /*
 ===========================
    RESPONSIVE AREA
@@ -1030,13 +1066,13 @@ Login Page
   .qna_accordion .accordion-body {
     font-size: 12px;
   }
-  .team_name h2{
-    font-size: 18px!important;
+  .team_name h2 {
+    font-size: 18px !important;
   }
-  .skill_wrap{
+  .skill_wrap {
     flex-direction: column;
   }
-  .skills li{
+  .skills li {
     font-size: 14px;
   }
 }
@@ -1837,7 +1873,7 @@ footer {
   #association {
     padding: 40px 0px;
   }
-  #establishment .row{
+  #establishment .row {
     display: flex;
     flex-direction: column-reverse;
   }
@@ -1942,6 +1978,6 @@ footer {
     display: none;
   }
   .br_for_phone {
-    display: block!important;
+    display: block !important;
   }
 }
