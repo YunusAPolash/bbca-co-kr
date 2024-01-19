@@ -44,7 +44,7 @@
             <div class="container-fluid">
                 <a class="navbar-brand" href="https://bbca.co.kr/">
                     <div class="site__logo">
-                        <img src="https://cdn.mypanel.link/jjc9qs/z4s13ol52a941w6j.png" alt="">
+                        <img src="https://cdn.mypanel.link/jjc9qs/z4s13ol52a941w6j.png" class="img-fluid" alt="">
                     </div>
                 </a>
                 <button type="button" class="nav-toggle-btn" data-bs-toggle="offcanvas"
@@ -73,7 +73,8 @@
                         <li class="nav-item">
                             <a class="nav-link {% if menu['active'] %}active{% endif %}" href="{{ menu['link'] }}" {% if
                                 menu['external'] %} target="_blank" {% endif %}>{{
-                                menu['name'] }}</a>
+                                menu['name'] }}
+                            </a>
                         </li>
                         {% endif %}
                         {% endfor %}
@@ -116,35 +117,19 @@
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
                     {% for menu in site['menu'] %}
-                    {% if menu['link'] == '~' %}
-                    {% if page['url'] == '/' %}
-                    <li class="nav-item">
-                        <a class="nav-link" href="javascript:void(0)" data-bs-toggle="modal"
-                            data-bs-target="#staticBackdrop">
-                            {{ menu['name'] }}
-                        </a>
-                    </li>
-                    {% else %}
-                    <li class="nav-item">
-                        <a class="nav-link" href="/#signin">
-                            {{ menu['name'] }}
-                        </a>
-                    </li>
-                    {% endif %}
-                    {% else %}
                     <li class="nav-item">
                         <a class="nav-link {% if menu['active'] %}active{% endif %}" href="{{ menu['link'] }}" {% if
                             menu['external'] %} target="_blank" {% endif %}>{{
-                            menu['name'] }}</a>
+                            menu['name'] }}
+                        </a>
                     </li>
-                    {% endif %}
                     {% endfor %}
                     <li class="nav-item">
                         <a href="/account" class="nav-link {% if menu['active'] %} active{% endif %}">마이페이지</a>
                     </li>
 
                     <li class="nav-item">
-                        <a href="/logout" class="nav-link {% if menu['active'] %} active{% endif %}">로그아웃</a>
+                        <a href="/logout" class="nav-link"> 로그아웃</a>
                     </li>
 
                 </ul>
